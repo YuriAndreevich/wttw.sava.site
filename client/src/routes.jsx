@@ -1,5 +1,5 @@
 import Home from "pages/Home";
-import {News} from "pages/News/MainPage";
+import News from "pages/News";
 import Trainings from "components/trainings"
 import Contacts from "pages/Contacts";
 import KonventOPravInval from "pages/KonventOPravInval";

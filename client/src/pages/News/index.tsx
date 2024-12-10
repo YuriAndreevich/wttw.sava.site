@@ -1,13 +1,21 @@
-import React from "react";
-import { useEffect } from "react";
+// src/components/News.tsx
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { PopularPosts } from "./PopularPosts";
 import { PostItem } from "./PostItem";
 import { getAllPosts } from "../../redux/features/post/postSlice";
+import styles from './News.module.scss';
 
-export const News = () => {
+interface RootState {
+  post: {
+    posts: Array<any>;
+    popularPosts: Array<any>;
+  };
+}
+
+const News: React.FC = () => {
   const dispatch = useDispatch();
-  const { posts, popularPosts } = useSelector((state) => state.post);
+  const { posts, popularPosts } = useSelector((state: RootState) => state.post);
 
   useEffect(() => {
     dispatch(getAllPosts());
@@ -15,24 +23,22 @@ export const News = () => {
 
   if (!posts || !posts.length) {
     return (
-      <div className="text-xl text-center text-white p-20">
+      <div className={styles.noPosts}>
         Постов не существует.
       </div>
     );
   }
-  
 
   return (
-    <div className="max-w-[900px] mx-auto py-32">
-      <div className="flex justify-between gap-8">
-        <div className="flex flex-col gap-10 basis-4/5">
+    <div className={styles.container}>
+      <div className={styles.contentWrapper}>
+        <div className={styles.postsSection}>
           {posts?.map((post, idx) => (
             <PostItem key={idx} post={post} />
           ))}
         </div>
-        <div className="basis-1/5">
-          <div className="text-xs uppercase text-white">Популярное:</div>
-
+        <div className={styles.popularSection}>
+          <div className={styles.popularTitle}>Популярное:</div>
           {popularPosts?.map((post, idx) => (
             <PopularPosts key={idx} post={post} />
           ))}
@@ -41,3 +47,5 @@ export const News = () => {
     </div>
   );
 };
+
+export default News;

@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "target": "ESNext",               // Поддержка современных возможностей
-    "module": "ESNext",               // Модульный стандарт
-    "jsx": "react-jsx",               // Использование нового JSX
-    "moduleResolution": "node",       // Разрешение модулей Node.js
-    "strict": true,                   // Включить строгую типизацию
-    "esModuleInterop": true,          // Поддержка ES модулей
-    "skipLibCheck": true,             // Пропустить проверку типов в библиотеках
+    "target": "ESNext",              
+    "module": "ESNext",               
+    "jsx": "react-jsx",               
+    "moduleResolution": "node",       
+    "strict": true,                  
+    "esModuleInterop": true,        
+    "skipLibCheck": true,            
     "forceConsistentCasingInFileNames": true
   },
-  "include": ["src"],                 // Область действия TypeScript
-  "exclude": ["node_modules", "dist"] // Исключённые директории
+  "include": ["src/**/*"],             
+  "exclude": ["node_modules", "dist"] 
 }

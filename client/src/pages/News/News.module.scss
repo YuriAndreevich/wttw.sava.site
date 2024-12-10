@@ -1,0 +1,42 @@
+/* src/components/News.module.scss */
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+  
+  .contentWrapper {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+  
+  .postsSection {
+    flex: 4;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  
+  .popularSection {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .popularTitle {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: #ffffff;
+  }
+  
+  .noPosts {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #ffffff;
+    padding: 5rem 0;
+  }
+  

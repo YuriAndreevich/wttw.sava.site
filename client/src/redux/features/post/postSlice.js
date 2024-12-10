@@ -10,7 +10,7 @@ const initialState = {
 // Создание поста
 export const createPost = createAsyncThunk('post/createPost', async (params, { rejectWithValue }) => {
   try {
-    const { data } = await axios.post('/posts', params);
+    const { data } = await axios.post('/api/posts', params);
     return data;
   } catch (error) {
     console.error(error);
@@ -21,7 +21,7 @@ export const createPost = createAsyncThunk('post/createPost', async (params, { r
 // Получение всех постов
 export const getAllPosts = createAsyncThunk('post/getAllPosts', async (_, { rejectWithValue }) => {
   try {
-    const { data } = await axios.get('/posts');
+    const { data } = await axios.get('/api/posts');
     console.log('API Response:', data);
     return data;
   } catch (error) {
@@ -33,7 +33,7 @@ export const getAllPosts = createAsyncThunk('post/getAllPosts', async (_, { reje
 // Удаление поста
 export const removePost = createAsyncThunk('post/removePost', async (id, { rejectWithValue }) => {
   try {
-    const { data } = await axios.delete(`/posts/${id}`);
+    const { data } = await axios.delete(`/api/posts/${id}`);
     return data;
   } catch (error) {
     console.error(error);
@@ -44,7 +44,7 @@ export const removePost = createAsyncThunk('post/removePost', async (id, { rejec
 // Обновление поста
 export const updatePost = createAsyncThunk('post/updatePost', async (updatedPost, { rejectWithValue }) => {
   try {
-    const { data } = await axios.put(`/posts/${updatedPost.id}`, updatedPost);
+    const { data } = await axios.put(`/api/posts/${updatedPost.id}`, updatedPost);
     return data;
   } catch (error) {
     console.error(error);

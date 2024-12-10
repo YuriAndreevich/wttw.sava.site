@@ -1,5 +1,5 @@
 import TrainingCard from "components/trainings";
-  import {News} from "pages/News/MainPage";
+  import News from "pages/News";
 import Contacts from "./Contacts";
 import { Title } from "components/UI";
 

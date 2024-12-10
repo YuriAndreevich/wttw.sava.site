@@ -55,7 +55,7 @@ export const PostPage = () => {
   }, [params.id, dispatch]);
 
   const fetchPost = useCallback(async () => {
-    const { data } = await axios.get(`/posts/${params.id}`);
+    const { data } = await axios.get(`/api/posts/${params.id}`);
     setPost(data);
   }, [params.id]);
 

@@ -17,7 +17,8 @@ export const PostItem = ({ post }) => {
         >
           {post.imgUrl && (
             <img
-              src={`https://genocide.sava.site/api/${post.imgUrl}`}
+              src={`${import.meta.env.VITE_API_URL}/api/${post.imgUrl}`}
+
               alt="img"
               className="object-cover w-full"
             />

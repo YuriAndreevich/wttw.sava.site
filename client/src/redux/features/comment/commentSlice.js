@@ -11,7 +11,7 @@ export const createComment = createAsyncThunk(
   'comment/createComment',
   async ({ postId, comment }, { rejectWithValue }) => {
     try {
-      const { data } = await axios.post(`/comments/${postId}`, {
+      const { data } = await axios.post(`/api/comments/${postId}`, {
         postId,
         comment,
       });
@@ -28,7 +28,7 @@ export const getPostComments = createAsyncThunk(
   'comment/getPostComments',
   async (postId, { rejectWithValue }) => {
     try {
-      const { data } = await axios.get(`/posts/comments/${postId}`);
+      const { data } = await axios.get(`/api/posts/comments/${postId}`);
       return data;
     } catch (error) {
       console.error(error);

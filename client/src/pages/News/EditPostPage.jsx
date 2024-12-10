@@ -61,7 +61,7 @@ export const EditPostPage = () => {
       <div className="flex object-cover py-2">
         {oldImage && (
           <img
-            src={`https://genocide.sava.site/api/${oldImage}`}
+            src={`${import.meta.env.VITE_API_URL} + '/api/' + ${oldImage}`}
             alt={oldImage.name}
           />
         )}
