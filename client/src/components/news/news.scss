@@ -1,0 +1,13 @@
+.news {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+
+
+@media (max-width: 1200px) {
+    .news {
+        overflow: scroll;
+        justify-content: initial;
+    }
+}

@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;@import url("https://fonts.cdnfonts.com/css/montserrat");
+
+$main-green: #74b99c;
+$main-blue: rgb(117, 196, 230);
+
+body,
+:root {
+    background-color: $main-green;
+    font-family: "Montserrat", sans-serif;
+    word-wrap: break-word;
+
+    a {
+        text-decoration: none !important
+    }
+}
+
+

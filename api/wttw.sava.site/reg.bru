@@ -1,0 +1,18 @@
+meta {
+  name: reg
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:3001/api/auth/register
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "username": "test2",
+    "password": "test2"
+  }
+}

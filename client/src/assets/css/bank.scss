@@ -1,0 +1,53 @@
+.bankContainer {
+    width: 1000px;
+    height: 1000px;
+    background-size: cover;
+    flex-direction: column; /* Изменение направления отображения на вертикальное */
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    overflow: hidden;
+    button {
+        background-color: #ffffff;
+        color: #333333;
+        border: 2px solid #333333;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    
+    &.startBackground {
+        background-image: url('../img/744417605_1263212.jpg' );
+        background-size: cover;
+    }
+
+    &.bankBackground {
+        background-image: url('../../assets/img/bank/bank_inside.jpg' );
+        background-size: cover;
+    }
+
+    &.terminalBackground {
+        background-image: url('../../assets/img/bank/terminal.png' );
+        background-size: cover;
+    }
+    &.tvBackground {
+        background-image: url('../../assets/img/bank/tv.png' );
+        background-size: cover;
+    }
+
+    .infoPad {
+        position: absolute;
+        bottom: -20vh;
+        right: 82.5vh;
+        background-color: #ffffff;
+        color: #333333;
+        border: 2px solid #333333;
+        min-width: 50vh;
+        min-height: 10vh;
+        max-width: 70vh;
+        padding: 20px 40px;
+    }
+}

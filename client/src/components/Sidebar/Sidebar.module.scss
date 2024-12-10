@@ -1,0 +1,65 @@
+.sidebar {
+    width: 250px; /* Фиксированная ширина Sidebar */
+    flex-shrink: 0; /* Sidebar не сжимается */
+  
+  background-color: #c2c2c2;
+  color: #000;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar nav ul li a {
+  color: #000;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.sidebar nav ul li a:hover {
+  color: #3f3f3f;
+}
+
+.submenuLabel {
+  font-weight: bold;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.sidebar nav ul li ul {
+  margin-left: 20px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.sidebar nav ul li ul.show {
+  max-height: 500px; /* Устанавливаем максимальную высоту для раскрытия */
+  opacity: 1; 
+}
+
+.sidebar nav ul li ul li {
+  margin-bottom: 5px;
+}
+
+.sidebar nav ul li ul li a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.sidebar nav ul li ul li a:hover {
+  color: white;
+}

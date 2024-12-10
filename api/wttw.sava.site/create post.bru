@@ -1,0 +1,22 @@
+meta {
+  name: create post
+  type: http
+  seq: 6
+}
+
+post {
+  url: http://localhost:3001/api/posts
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTRmYTE3NWYzYTNlZWM3MTU4ZGEzYiIsImlhdCI6MTczMzYzMTI5MywiZXhwIjoxNzM2MjIzMjkzfQ.Zt7ZADCgLomIYxDvUWo7W_Pc6i1-VaVO_PlR2M0PC6I
+}
+
+body:json {
+  {
+    "title": "Заголовок поста",
+    "text": "Текст поста"
+  }
+}

@@ -1,0 +1,69 @@
+.shopContainer {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    max-height: 100vh;
+    background-size: cover; /* Изменение направления отображения на вертикальное */
+    align-items: center;
+    justify-content: center;
+    overflow: auto;
+    button {
+        background-color: #ffffff;
+        color: #333333;
+        border: 2px solid #333333;
+        padding: 20px 40px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    &.breadBackground {
+        background-image: url('../img/shop/bread/background.jpg' );
+        background-size: cover;
+    }
+
+    &.milkBackground {
+        background-image: url('../img/shop/milk/background.jpg' );
+        background-size: cover;
+    }
+
+    &.vegetablesBackground {
+        background-image: url('../img/shop/vegetables/background.jpg' );
+        background-size: cover;
+    }
+
+    &.kassaBackground {
+        background-image: url('../img/shop/kassa.jpg' );
+        background-size: cover;
+    }
+
+    &.shopBackground {
+        background-image: url('../img/shop/shop_inside.jpg');
+        background-size: cover;
+    }
+
+    &.startBackground {
+        background-image: url('../img/744417605_1263212.jpg' );
+        background-size: cover;
+    }
+
+    &.basketBackground {
+        background-image: url('../img/shop/korzina.jpg' );
+        background-size: cover;
+    }
+
+    &.boughtBackground {
+        background-image: url('../img/shop/bag.jpg' );
+        background-size: cover;
+    }
+    .balanceInfo {
+        max-width: 40vh;
+        overflow: hidden;
+        margin-left: auto;
+        color: green;
+        font-weight: 700;
+        border: 1px solid black;
+        background-color: white; 
+    }
+}

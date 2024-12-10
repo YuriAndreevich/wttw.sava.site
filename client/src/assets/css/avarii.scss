@@ -1,0 +1,69 @@
+.avariiContainer {
+    width: 100ww;
+    height: 1000px;
+    background-size: cover;
+    flex-direction: column; /* Изменение направления отображения на вертикальное */
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    overflow: hidden;
+    button {
+        background-color: #ffffff;
+        color: #333333;
+        border: 2px solid #333333;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 700;
+    }
+    &.startBackground {
+        background-image: url('../img/kvartira_2.jpg' );
+        background-size: cover;
+    }
+
+    &.mchsBackground {
+        background-image: url('../img/avarii/mchs.png' );
+        background-size: cover;
+    }
+    
+    &.skorayaBackground {
+        background-image: url('../img/avarii/skoraya.png' );
+        background-size: cover;
+    }
+
+    &.policeBackground {
+        background-image: url('../img/avarii/police.png' );
+        background-size: 100%
+    }
+
+    
+    &.vodokanalBackground {
+        background-image: url('../img/avarii/vodokanal.png' );
+    }
+    
+    &.zkhBackground {
+        background-image: url('../img/avarii/zkh.png' );
+    }
+
+    &.callingBackground {
+        background-image: url('../img/avarii/calling.jpg' );
+    }
+
+    &.elsetBackground {
+        background-image: url('../img/avarii/el.png' );
+    }
+
+    &.liftBackground {
+        background-image: url('../img/avarii/lift.png' );
+    }
+    select {
+        font-size: 20px; /* Размер шрифта для основного элемента select */
+    }
+    
+    select option {
+        font-size: 20px; /* Размер шрифта для элементов списка */
+    }
+    
+    
+}

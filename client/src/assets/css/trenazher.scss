@@ -1,0 +1,145 @@
+$backgroundImage1: url('../img/744417605_1263212.jpg');
+$backgroundImage2: url('../img/poliklinika.jpg'); 
+$backgroundImage3: url('../img/lift.jpg');
+$backgroundImage4: url('../img/apteka.jpg');
+$backgroundImage5: url('../img/smile.jpg');
+
+
+button:not(#bodyParts button){
+  background-color: #ffffff; /* белый цвет фона */
+  color: #333333; /* цвет текста */
+  border: 2px solid #333333; /* цвет границы */
+  padding: 20px 40px; /* внутренний отступ */
+  border-radius: 5px; /* скругленные углы */
+  cursor: pointer; /* изменение формы указателя при наведении */
+  font-size: 20px;
+  font-weight: 700; /* размер шрифта */
+}
+
+button:hover {
+  background-color: #eeeeee; /* изменение цвета при наведении */
+}
+
+
+
+.containerr {
+  background: $backgroundImage1;
+  height: 800px;
+  width: 800px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background-size: cover;
+  z-index: 0;
+
+  &.enteredClinic {
+    background: $backgroundImage2;
+    background-size: cover;
+  };
+  
+  &.enteredLift {
+    background: $backgroundImage3;
+    background-size: cover;
+  }
+
+  &.enteredApteka {
+    background: $backgroundImage4;
+    background-size: cover;
+  }
+
+  &.smile {
+    background: $backgroundImage5 ;
+    background-size: cover;
+  }
+}
+
+
+.doctorContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 90vh;
+}
+
+.doctorLocation {
+  color: white;
+  font-weight: 700;
+  font-size: 25px;
+}
+
+
+.containerr::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)); /* используем градиент для затемнения */
+    z-index: 0; /* помещаем псевдоэлемент под контент */
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+} 
+
+.zagolovok {
+    color: blue;
+    text-align: center;
+    display: flex;
+}
+
+.container1 {
+    border: 5px solid black;
+    background-color: lightblue;
+    width: 500px;
+    height: 500px;
+    margin: auto;
+    margin-top: 10%;
+}
+
+.content {
+}
+
+
+.info {
+  text-align: center;
+}
+
+
+
+#bodyParts {
+  align-items: center;
+  display: inline-table;
+  padding-left: 13%;
+}
+#bodyParts button {
+  padding: 15px;
+  border-radius: 5px;
+  border-color: black;
+  cursor: pointer
+}
+#bodyParts button:hover {
+  background-color: #dbdbdb
+}
+
+
+#clinicOptions button {
+  background-color: white;
+  height: 150%;
+  margin-right: 20%;
+  
+}
+
+#doctors button {
+}
+
+.liftButtons button{
+  height: 20%;
+}
+
+.doctorLocation br {
+  margin-bottom: 1px;
+}

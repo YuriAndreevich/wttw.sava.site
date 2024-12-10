@@ -1,0 +1,22 @@
+meta {
+  name: auth
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:3001/api/auth/login
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTRmYTE3NWYzYTNlZWM3MTU4ZGEzYiIsImlhdCI6MTczMzYyMjI5NSwiZXhwIjoxNzM2MjE0Mjk1fQ.gGAH8-juEbjvVN3gO2ManIg7YnG6_L3AohZK7fwGsqE
+}
+
+body:json {
+  {
+    "username": "testtest",
+    "password": "testtest"
+  }
+}

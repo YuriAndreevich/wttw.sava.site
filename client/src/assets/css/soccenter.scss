@@ -1,0 +1,53 @@
+.socCenterContainer {
+    width: 1000px;
+    height: 1000px;
+    background-image: url('../img/terr_center.jpg');
+    background-size: cover;
+    flex-direction: column; /* Изменение направления отображения на вертикальное */
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    button {
+        background-color: #ffffff;
+        color: #333333;
+        border: 2px solid #333333;
+        padding: 20px 40px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .buttonTest:not(.uslugas) {
+        background-color: white;
+        color: rgb(56, 161, 105);
+        width: fit-content;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        font-weight: 800;
+    }
+
+    .custom-dropdown {
+        color: red;
+        height: 150px;
+        width: fit-content;
+        font-weight: 700;
+        font-size: 25px;
+      }
+      
+    &.reception {
+        background-image: url('../img/reception.jpg');
+        background-size: cover;
+    }
+
+    &.dver{
+        background-image: url('../img/dver.jpg');
+        background-size: cover
+    }
+
+    &.cabinet{
+        background-image: url('../img/cabinet.jpg');
+        background-size: cover
+    }
+}

@@ -1,0 +1,11 @@
+
+.sidebar {
+  width: 250px; /* Фиксированная ширина Sidebar */
+  flex-shrink: 0; /* Sidebar не сжимается */
+  
+}
+
+.container {
+  flex: 1;
+  margin-left: 250px;
+}
