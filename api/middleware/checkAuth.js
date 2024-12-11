@@ -16,7 +16,6 @@ export const checkAuth = (req, res, next) => {
             });
         }
     } else {
-        console.error("Ошибка: Токен отсутствует");
         return res.status(401).json({
             message: 'Нет доступа.',
         });

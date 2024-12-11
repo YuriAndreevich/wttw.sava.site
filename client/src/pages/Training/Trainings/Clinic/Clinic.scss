@@ -1,16 +1,16 @@
-$backgroundImage1: url('../img/744417605_1263212.jpg');
-$backgroundImage2: url('../img/poliklinika.jpg');
-$backgroundImage3: url('../img/lift.jpg');
-$backgroundImage4: url('../img/apteka.jpg');
-$backgroundImage5: url('../img/smile.jpg');
-$backgroundImage6: url('../img/registratura.jpg');
-$backgroundImage7: url('../img/talon.png');
-$backgroundImage8: url("../img/doctors/receipt.jpeg");
+$backgroundImage1: url('../../../../assets/img/744417605_1263212.jpg');
+$backgroundImage2: url('../../../../assets/img/poliklinika.jpg');
+$backgroundImage3: url('../../../../assets/img/lift.jpg');
+$backgroundImage4: url('../../../../assets/img/apteka.jpg');
+$backgroundImage5: url('../../../../assets/img/smile.jpg');
+$backgroundImage6: url('../../../../assets/img/registratura.jpg');
+$backgroundImage7: url('../../../../assets/img/talon.png');
+$backgroundImage8: url("../../../../assets/img/doctors/receipt.jpeg");
 
 .trenContainer {
     width: 1000px;
     height: 1000px;
-    background-image: url('../img/744417605_1263212.jpg');
+    background-image: url('../../../../assets/img/744417605_1263212.jpg');
     background-size: cover;
     position: relative;
     display: flex;

@@ -1,0 +1,29 @@
+import { useState } from "react";
+import { Title } from "components/UI";
+
+function HoverText({ title }) {
+  const [text, setText] = useState(title);
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <div
+      onMouseEnter={() => {
+        setText("Начать");
+        setIsHovered(true);
+      }}
+      onMouseLeave={() => {
+        setText(title);
+        setIsHovered(false);
+      }}
+      style={{
+        cursor: "pointer",
+        transform: isHovered ? "scale(1.05)" : "scale(1)",
+        transition: "transform 0.3s ease-in-out",
+      }}
+    >
+      <Title>{text}</Title>
+    </div>
+  );
+}
+
+export default HoverText;

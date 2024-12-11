@@ -1,5 +1,10 @@
-import TrainingCard from "./TrainingCard"; 
+import Card from "./components/Card"; 
 import { Title, Text } from "components/UI";
+import './Training.scss'
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
 
 function Index() {
   return (
@@ -11,7 +16,7 @@ function Index() {
           различных объектов, а также для обучения действиям в чрезвычайных
           ситуациях, включая обращение за помощью в аварийные службы.
         </Text>
-        <TrainingCard />
+        <Card />
       </div>
 
       <div className="mask"></div>

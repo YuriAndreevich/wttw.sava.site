@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import 'assets/css/bank.scss'
-import card from '../../assets/img/bank/card.png'
-import wallet from '../../assets/img/bank/wallet.png'
-import y2 from '../../assets/mp3/у2.mp3';
-import k3 from '../../assets/mp3/к3.mp3';
-import v4 from '../../assets/mp3/в4.mp3';
-import c5 from '../../assets/mp3/с5.mp3';
+import  { useState } from "react";
+import './Bank.scss'
+import card from 'assets/img/bank/card.png'
+import wallet from 'assets/img/bank/wallet.png'
+import y2 from 'assets/mp3/у2.mp3';
+import k3 from 'assets/mp3/к3.mp3';
+import v4 from 'assets/mp3/в4.mp3';
+import c5 from 'assets/mp3/с5.mp3';
 
 function Bank () {
     

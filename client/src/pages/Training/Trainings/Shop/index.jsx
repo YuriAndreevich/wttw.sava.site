@@ -1,29 +1,29 @@
-    import React, { useState } from 'react';
-    import 'assets/css/magazin.scss'
+    import  { useState } from 'react';
+    import './Shop.scss'
     import { Modal } from 'react-responsive-modal';
 
-    import baton from '../../assets/img/shop/bread/baton.png'
-    import hleb from '../../assets/img/shop/bread/hleb.png'
-    import pirog from '../../assets/img/shop/bread/pirog.png'
-    import bulka from '../../assets/img/shop/bread/bulka.png'
+    import baton from 'assets/img/shop/bread/baton.png'
+    import hleb from 'assets/img/shop/bread/hleb.png'
+    import pirog from 'assets/img/shop/bread/pirog.png'
+    import bulka from 'assets/img/shop/bread/bulka.png'
 
-    import milk from '../../assets/img/shop/milk/milk.png'
-    import tvorog from '../../assets/img/shop/milk/tvorog.png'
-    import kefir from '../../assets/img/shop/milk/kefir.png'
-    import smetana from '../../assets/img/shop/milk/smetana.png'
+    import milk from 'assets/img/shop/milk/milk.png'
+    import tvorog from 'assets/img/shop/milk/tvorog.png'
+    import kefir from 'assets/img/shop/milk/kefir.png'
+    import smetana from 'assets/img/shop/milk/smetana.png'
 
-    import potato from '../../assets/img/shop/vegetables/potato.png'
-    import carrot from '../../assets/img/shop/vegetables/carrot.png'
-    import cabbadge from '../../assets/img/shop/vegetables/cabbadge.png'
-    import onion from '../../assets/img/shop/vegetables/onion.png'
+    import potato from 'assets/img/shop/vegetables/potato.png'
+    import carrot from 'assets/img/shop/vegetables/carrot.png'
+    import cabbadge from 'assets/img/shop/vegetables/cabbadge.png'
+    import onion from 'assets/img/shop/vegetables/onion.png'
 
-    import card from '../../assets/img/shop/card.png'
-    import wallet from '../../assets/img/shop/wallet.png'
+    import card from 'assets/img/shop/card.png'
+    import wallet from 'assets/img/shop/wallet.png'
 
-    import telejka from '../../assets/img/shop/telejka.png'
-    import kassa_stage from '../../assets/img/shop/kassa1.jpg'
+    import telejka from 'assets/img/shop/telejka.png'
+    import kassa_stage from 'assets/img/shop/kassa1.jpg'
 
-    import adminIMG from '../../assets/img/administrator.png'
+    import adminIMG from 'assets/img/administrator.png'
     import 'reactjs-popup'
 
     import 'rodal/lib/rodal.css';

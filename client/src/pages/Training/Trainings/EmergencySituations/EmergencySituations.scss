@@ -18,44 +18,44 @@
         font-weight: 700;
     }
     &.startBackground {
-        background-image: url('../img/kvartira_2.jpg' );
+        background-image: url('../../../../assets/img/kvartira_2.jpg' );
         background-size: cover;
     }
 
     &.mchsBackground {
-        background-image: url('../img/avarii/mchs.png' );
+        background-image: url('../../../../assets/img/avarii/mchs.png' );
         background-size: cover;
     }
     
     &.skorayaBackground {
-        background-image: url('../img/avarii/skoraya.png' );
+        background-image: url('../../../../assets/img/avarii/skoraya.png' );
         background-size: cover;
     }
 
     &.policeBackground {
-        background-image: url('../img/avarii/police.png' );
+        background-image: url('../../../../assets/img/avarii/police.png' );
         background-size: 100%
     }
 
     
     &.vodokanalBackground {
-        background-image: url('../img/avarii/vodokanal.png' );
+        background-image: url('../../../../assets/img/avarii/vodokanal.png' );
     }
     
     &.zkhBackground {
-        background-image: url('../img/avarii/zkh.png' );
+        background-image: url('../../../../assets/img/avarii/zkh.png' );
     }
 
     &.callingBackground {
-        background-image: url('../img/avarii/calling.jpg' );
+        background-image: url('../../../../assets/img/avarii/calling.jpg' );
     }
 
     &.elsetBackground {
-        background-image: url('../img/avarii/el.png' );
+        background-image: url('../../../../assets/img/avarii/el.png' );
     }
 
     &.liftBackground {
-        background-image: url('../img/avarii/lift.png' );
+        background-image: url('../../../../assets/img/avarii/lift.png' );
     }
     select {
         font-size: 20px; /* Размер шрифта для основного элемента select */

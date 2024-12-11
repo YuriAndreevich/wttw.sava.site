@@ -1,7 +1,6 @@
 import  { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { PopularPosts } from "./PopularPosts";
-import { PostItem } from "./PostItem";
 import { getAllPosts } from "../../redux/features/post/postSlice";
 import styles from './News.module.scss';
 import Card from './components/Card'
@@ -25,22 +24,20 @@ const News = () => {
 
   return (
 
-    <div className={styles.container}>
       <div className={styles.contentWrapper}>
-        <div className={styles.postsSection}>
-          {posts?.map((post, idx) => (
-            <PostItem key={idx} post={post} />
-          ))}
-          <Card/>
-        </div>
-        <div className={styles.popularSection}>
-          <div className={styles.popularTitle}>Популярное:</div>
+         <div className={styles.popularSection}>
+          <div className={styles.popularTitle}>Популярные новости:</div>
           {popularPosts?.map((post, idx) => (
             <PopularPosts key={idx} post={post} />
           ))}
         </div>
+        <div className={styles.container}>
+          {posts?.map((post, idx) => (
+            <Card key={idx} post={post} />
+          ))}
+        </div>
+       
       </div>
-    </div>
   );
 };
 

@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import "assets/css/aptekatrenazher.scss";
+import  { useState, useEffect } from "react";
+import "./Pharmacy.scss";
 import 'react-responsive-modal/styles.css';
 import 'rodal/lib/rodal.css';
 import 'react-responsive-modal/styles.css';
@@ -37,7 +37,7 @@ function AptekaTrenazher() {
   const [currentBodyPart, setCurrentBodyPart] = useState("");
   const [medecinesArray, setMedecinesArray] = useState([]);
   const [adminHelpVisible, setAdminHelpVisible] = useState(true);
-  // eslint-disable-next-line
+   
 
 
   useEffect(() => {

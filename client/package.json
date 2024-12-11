@@ -22,6 +22,7 @@
     "jwt-decode": "^4.0.0",
     "path": "^0.12.7",
     "postcss": "^8.4.49",
+    "prop-types": "^15.8.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-inlinesvg": "^4.1.5",

@@ -1,60 +1,14 @@
-// import React, { useState, useEffect } from "react";
-// // import homebg from "assets/img/mainSVG.svg";
-// import Sidebar from "components/Sidebar";
-// // import ProgressBar from "components/progress";
-// import "./Header.scss";
-// import useWindowSize from "hooks/useWindowSize";
 
-// function Home() {
-//   const [isSticky, setIsSticky] = useState(false);
-//   const { width: screen } = useWindowSize();
-
-//   useEffect(() => {
-//     const handleScroll = () => {
-//       const offset = window.scrollY;
-//       setIsSticky(screen <= 474 && offset > 0);
-//     };
-
-//     window.addEventListener("scroll", handleScroll);
-
-//     return () => {
-//       window.removeEventListener("scroll", handleScroll);
-//     };
-//   }, [screen]);
-
-//   return (
-//     <>
-//       <div className="home">
-//         {/* <SVG src={homebg} className="" /> */}
-//         <h1 className="home-name"> Портал «Окно в мир»</h1>
-//         <marquee style={{ color: "#fff", fontSize: "40px" }}>
-//           При поддержке учреждения образования «Новополоцкий государственный
-//           политехнический колледж»
-//         </marquee>
-//       </div>
-//       <div
-//         className="home-navbar"
-//         style={{
-//           backgroundColor: isSticky ? "#38A169" : "transparent",
-//           position: isSticky ? "initial" : "sticky",
-//           top: 0,
-//         }}
-//       >
-//         <Sidebar />
-//         {/* <ProgressBar /> */}
-//       </div>
-//     </>
-//   );
-// }
-
-// export default Home;
-import  { useState } from "react";
+import  { useState, useEffect } from "react";
 import styles from "./Navbar.module.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { checkIsAuth, logout } from "../../redux/features/auth/authSlice";
 import { Link } from "react-router-dom";
 import Img from "assets/noImage.png";
 import { Snackbar, Alert } from "@mui/material";
+import { getMe } from "../../redux/features/auth/authSlice";
+import {Title} from 'components/UI'
+import Logo from 'assets/logo.png'
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -75,12 +29,17 @@ const Navbar = () => {
     setSnackbarSeverity("success");
     setOpenSnackbar(true);
   };
-
+  useEffect(() => {
+    const token = window.localStorage.getItem("token");
+    if (token) {
+      dispatch(getMe());
+    }
+  }, [dispatch]);
   return (
     <>
       <nav className={styles.navbar}>
-        <div className={styles.logo}>MyLogo</div>
-
+        <div className={styles.logo}><img src={Logo}/></div>
+        <Title>Портал «Окно в мир»</Title>
         {isAuth ? (
           <>
             <Link to="/admin">
@@ -98,10 +57,9 @@ const Navbar = () => {
         )}
       </nav>
 
-      {/* Snackbar для уведомлений */}
       <Snackbar
         open={openSnackbar}
-        autoHideDuration={3000} // Автоматически скрываем через 3 секунды
+        autoHideDuration={3000} 
         onClose={handleCloseSnackbar}
       >
         <Alert
@@ -116,4 +74,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
 

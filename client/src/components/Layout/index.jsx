@@ -9,7 +9,12 @@ const Layout = ({ children }) => {
     <div className={styles.layout}>
       <Navbar/>
         <Sidebar />
-        <Container className={styles.container}>{children}</Container>
+        <Container className={styles.container}>{children}
+        <marquee style={{ color: "#000", fontSize: "40px" }}>
+           При поддержке учреждения образования «Новополоцкий государственный
+           политехнический колледж»
+         </marquee>
+        </Container>
     </div>
   );
 };

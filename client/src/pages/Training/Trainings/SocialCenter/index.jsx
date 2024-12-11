@@ -1,34 +1,34 @@
-import React, { useState } from "react";
-import "assets/css/soccenter.scss";
+import  { useState } from "react";
+import "./SocialCenter.scss";
 
 import uslugaPng from "assets/img/usluga.png";
 
-import A1 from "../../assets/img/services/A/A1.jpg";
-import A2 from "../../assets/img/services/A/A2.jpg";
-import A3 from "../../assets/img/services/A/A3.jpg";
-import A4 from "../../assets/img/services/A/A4.jpg";
-import A5 from "../../assets/img/services/A/A5.jpg";
-import A6 from "../../assets/img/services/A/A6.jpg";
-import A7 from "../../assets/img/services/A/A7.jpg";
-import A8 from "../../assets/img/services/A/A8.jpg";
-import A9 from "../../assets/img/services/A/A9.jpg";
+import A1 from "assets/img/services/A/A1.jpg";
+import A2 from "assets/img/services/A/A2.jpg";
+import A3 from "assets/img/services/A/A3.jpg";
+import A4 from "assets/img/services/A/A4.jpg";
+import A5 from "assets/img/services/A/A5.jpg";
+import A6 from "assets/img/services/A/A6.jpg";
+import A7 from "assets/img/services/A/A7.jpg";
+import A8 from "assets/img/services/A/A8.jpg";
+import A9 from "assets/img/services/A/A9.jpg";
 
-import B1 from "../../assets/img/services/B/B1.jpg";
-import B2 from "../../assets/img/services/B/B2.jpg";
-import B3 from "../../assets/img/services/B/B3.jpg";
-import B4 from "../../assets/img/services/B/B4.jpg";
+import B1 from "assets/img/services/B/B1.jpg";
+import B2 from "assets/img/services/B/B2.jpg";
+import B3 from "assets/img/services/B/B3.jpg";
+import B4 from "assets/img/services/B/B4.jpg";
 
-import C1 from "../../assets/img/services/C/C1.jpg";
-import C2 from "../../assets/img/services/C/C2.jpg";
-import C3 from "../../assets/img/services/C/C3.jpg";
+import C1 from "assets/img/services/C/C1.jpg";
+import C2 from "assets/img/services/C/C2.jpg";
+import C3 from "assets/img/services/C/C3.jpg";
 
-import D1 from "../../assets/img/services/D/D1.jpg";
-import D2 from "../../assets/img/services/D/D2.jpg";
-import D3 from "../../assets/img/services/D/D3.jpg";
+import D1 from "assets/img/services/D/D1.jpg";
+import D2 from "assets/img/services/D/D2.jpg";
+import D3 from "assets/img/services/D/D3.jpg";
 
-import E1 from "../../assets/img/services/E/E1.jpg";
-import E2 from "../../assets/img/services/E/E2.jpg";
-import E3 from "../../assets/img/services/E/E3.jpg";
+import E1 from "assets/img/services/E/E1.jpg";
+import E2 from "assets/img/services/E/E2.jpg";
+import E3 from "assets/img/services/E/E3.jpg";
 
 const Dropdown = ({ options, selectedOption, onOptionChange }) => {
   return (

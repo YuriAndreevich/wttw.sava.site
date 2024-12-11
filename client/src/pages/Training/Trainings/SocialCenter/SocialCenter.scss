@@ -1,7 +1,7 @@
 .socCenterContainer {
     width: 1000px;
     height: 1000px;
-    background-image: url('../img/terr_center.jpg');
+    background-image: url('../../../../assets/img/terr_center.jpg');
     background-size: cover;
     flex-direction: column; /* Изменение направления отображения на вертикальное */
     align-items: center;
@@ -37,17 +37,17 @@
       }
       
     &.reception {
-        background-image: url('../img/reception.jpg');
+        background-image: url('../../../../assets/img/reception.jpg');
         background-size: cover;
     }
 
     &.dver{
-        background-image: url('../img/dver.jpg');
+        background-image: url('../../../../assets/img/dver.jpg');
         background-size: cover
     }
 
     &.cabinet{
-        background-image: url('../img/cabinet.jpg');
+        background-image: url('../../../../assets/img/cabinet.jpg');
         background-size: cover
     }
 }

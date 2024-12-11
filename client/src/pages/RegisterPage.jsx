@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { registerUser, checkIsAuth } from "../redux/features/auth/authSlice";
@@ -24,11 +24,11 @@ export const RegisterPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (status) {
-      setSnackbarMessage(status);
-      setSnackbarSeverity("success");
-      setOpenSnackbar(true);
-    }
+    // if (status) {
+    //   setSnackbarMessage(status);
+    //   setSnackbarSeverity("success");
+    //   setOpenSnackbar(true);
+    // }
 
     if (isAuth) navigate("/");
   }, [status, isAuth, navigate]);
@@ -48,11 +48,9 @@ export const RegisterPage = () => {
       setOpenSnackbar(true);
     }
   };
-
   const handleCloseSnackbar = () => {
     setOpenSnackbar(false);
   };
-
   return (
     <Box
       sx={{
@@ -106,8 +104,6 @@ export const RegisterPage = () => {
           </Button>
         </Link>
       </Box>
-
-      {/* Snackbar для уведомлений */}
       <Snackbar
         open={openSnackbar}
         autoHideDuration={3000}

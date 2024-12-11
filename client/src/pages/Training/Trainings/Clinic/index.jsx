@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import "assets/css/trenazher2.scss";
+import  { useState, useEffect } from "react";
+import "./Clinic.scss";
 
 import bolen from "assets/img/disease/bolen.jpg";
 import spina from "assets/img/disease/spina.jpg";

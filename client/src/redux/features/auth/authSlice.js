@@ -3,12 +3,11 @@ import axios from '../../../axios';
 
 const initialState = {
   user: null,
-  token: null,
+  token: window.localStorage.getItem('token') || null,
   isLoading: false,
   status: null,
 };
 
-// Регистрация пользователя
 export const registerUser = createAsyncThunk(
   'auth/registerUser',
   async ({ username, password }, { rejectWithValue }) => {
@@ -24,7 +23,6 @@ export const registerUser = createAsyncThunk(
   }
 );
 
-// Логин пользователя
 export const loginUser = createAsyncThunk(
   'auth/loginUser',
   async ({ username, password }, { rejectWithValue }) => {
@@ -57,12 +55,11 @@ const authSlice = createSlice({
       state.token = null;
       state.isLoading = false;
       state.status = null;
-      window.localStorage.removeItem('token'); // Очищаем токен из хранилища
+      window.localStorage.removeItem('token'); 
     },
   },
   extraReducers: (builder) => {
     builder
-      // Регистрация пользователя
       .addCase(registerUser.pending, (state) => {
         state.isLoading = true;
         state.status = null;
@@ -78,7 +75,6 @@ const authSlice = createSlice({
         state.isLoading = false;
       })
 
-      // Логин пользователя
       .addCase(loginUser.pending, (state) => {
         state.isLoading = true;
         state.status = null;
@@ -94,7 +90,6 @@ const authSlice = createSlice({
         state.isLoading = false;
       })
 
-      // Проверка авторизации
       .addCase(getMe.pending, (state) => {
         state.isLoading = true;
         state.status = null;
@@ -112,9 +107,7 @@ const authSlice = createSlice({
   },
 });
 
-// Селектор проверки авторизации
 export const checkIsAuth = (state) => Boolean(state.auth.token);
 
-// Экспортируем действия и редуктор
 export const { logout } = authSlice.actions;
 export default authSlice.reducer;

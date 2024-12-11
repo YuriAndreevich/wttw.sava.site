@@ -24,11 +24,11 @@ export const LoginPage = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    if (status) {
-      setSnackbarMessage(status);
-      setSnackbarSeverity("success");
-      setOpenSnackbar(true);
-    }
+    // if (status) {
+    //   setSnackbarMessage(status);
+    //   setSnackbarSeverity("success");
+    //   setOpenSnackbar(true);
+    // }
 
     if (isAuth) navigate("/");
   }, [status, isAuth, navigate]);

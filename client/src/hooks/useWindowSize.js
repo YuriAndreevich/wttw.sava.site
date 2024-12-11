@@ -20,3 +20,18 @@ const useWindowSize = () => {
 }
 
 export default useWindowSize
+  // import useWindowSize from "hooks/useWindowSize";
+//   const { width: screen } = useWindowSize();
+
+//   useEffect(() => {
+//     const handleScroll = () => {
+//       const offset = window.scrollY;
+//       setIsSticky(screen <= 474 && offset > 0);
+//     };
+
+//     window.addEventListener("scroll", handleScroll);
+
+//     return () => {
+//       window.removeEventListener("scroll", handleScroll);
+//     };
+//   }, [screen]);
