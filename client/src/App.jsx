@@ -7,7 +7,6 @@ import { useDispatch } from "react-redux";
 import { getMe } from "./redux/features/auth/authSlice.js";
 import {ToastNotification} from 'components/ToastNotification'
 
-
 function App() {
   const dispatch = useDispatch();
 
@@ -17,12 +16,19 @@ function App() {
 
   return (
     <Layout>
-           <ScrollToTopButton />
-           <ToastNotification />
+      <ScrollToTopButton />
+      <ToastNotification />
       <Routes>
-        {routes.map((route, index) => (
-          <Route key={index} path={route.path} element={<route.component />} />
-        ))}
+        {routes.map((route, index) => {
+          const { component: Component, path } = route;
+          return (
+            <Route 
+              key={index} 
+              path={path} 
+              element={<Component />} 
+            />
+          );
+        })}
       </Routes>
     </Layout>
   );

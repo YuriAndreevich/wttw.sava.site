@@ -1,6 +1,6 @@
 import Home from "pages/Home";
 import News from "pages/News";
-import Trainings from "pages/Training"
+import Trainings from "pages/Training";
 import Contacts from "pages/Contacts";
 
 import Clinic from "pages/Training/Trainings/Clinic";
@@ -27,7 +27,7 @@ import Putevoditel from "pages/Putevoditel";
 
 import { LoginPage } from "pages/LoginPage";
 import { RegisterPage } from "pages/RegisterPage";
-import { PostPage } from "pages/News/PostPage";
+import PostPage from "pages/News/components/PostPage";
 
 import CRM from "pages/CRM";
 
@@ -41,13 +41,22 @@ const routes = [
   { path: "/register", component: RegisterPage },
   { path: "/konvent-o-prav-inval", component: KonventOPravInval },
   { path: "/nac-plan-2017-2025", component: NacPlan20172025 },
-  { path: "/postanovlenie-o-tech-sredstvah", component: PostanovlenieOGosReestreTehSredstv },
-  { path: "/postanovlenie-sm-rb-o-vzaimodeistvii", component: PostanovlenieOMezved },
+  {
+    path: "/postanovlenie-o-tech-sredstvah",
+    component: PostanovlenieOGosReestreTehSredstv,
+  },
+  {
+    path: "/postanovlenie-sm-rb-o-vzaimodeistvii",
+    component: PostanovlenieOMezved,
+  },
   { path: "/audiobiblioteka-dlya-nezryachikh", component: Audiobiblioteka },
   { path: "/zakon-o-gos-soc-pomoschi", component: GosPomosh },
   { path: "/zakon-o-soc-lgotah", component: GosLgoti },
   { path: "/zakon-o-prav-inv", component: OPravahInvalidovSicIntegraciya },
-  { path: "/postanovlenie-sm-rb-o-posobii", component: OPosobiiInvalid1Group80let },
+  {
+    path: "/postanovlenie-sm-rb-o-posobii",
+    component: OPosobiiInvalid1Group80let,
+  },
   { path: "/sit-pomosh-invalidam", component: SituatPomosh },
   { path: "/mat-pomosh", component: MatPomosh },
   { path: "/trainings/Clinic", component: Clinic },
@@ -65,12 +74,14 @@ const routes = [
 
   {
     path: "/crm",
-    element: (
+    component: PrivateRoute,
+    render: (props) => (
       <PrivateRoute>
-        <CRM />
+        <CRM {...props} />
       </PrivateRoute>
     ),
-  },
+  }
+  
 ];
 
 export default routes;

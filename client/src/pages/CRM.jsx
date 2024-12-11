@@ -1,4 +1,4 @@
-import { AddPostPage } from './News/AddPostPage'
+import { AddPostPage } from './News/components/AddPostPage'
 
 function CRM() {
   return (

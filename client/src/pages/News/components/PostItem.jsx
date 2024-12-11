@@ -1,8 +1,6 @@
-import React from "react";
-import { AiFillEye, AiOutlineMessage } from "react-icons/ai";
-import Moment from "react-moment";
 import { Link } from "react-router-dom";
-
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import CommentIcon from '@mui/icons-material/Comment';
 export const PostItem = ({ post }) => {
   if (!post) {
     return (
@@ -18,7 +16,6 @@ export const PostItem = ({ post }) => {
           {post.imgUrl && (
             <img
               src={`${import.meta.env.VITE_API_URL}/api/${post.imgUrl}`}
-
               alt="img"
               className="object-cover w-full"
             />
@@ -27,7 +24,7 @@ export const PostItem = ({ post }) => {
         <div className="flex justify-between items-center pt-2">
           <div className="text-xs text-white opacity-50">{post.username}</div>
           <div className="text-xs text-white opacity-50">
-            <Moment date={post.createdAt} format="D MMM YYYY" />
+            {/* <Moment date={post.createdAt} format="D MMM YYYY" /> */}
           </div>
         </div>
         <div className="text-white text-xl">{post.title}</div>
@@ -37,10 +34,10 @@ export const PostItem = ({ post }) => {
 
         <div className="flex gap-3 items-center mt-2">
           <button className="flex items-center justify-center gap-2 text-xs text-white opacity-50">
-            <AiFillEye /> <span>{post.views}</span>
+            <RemoveRedEyeIcon /> <span>{post.views}</span>
           </button>
           <button className="flex items-center justify-center gap-2 text-xs text-white opacity-50">
-            <AiOutlineMessage /> <span>{post.comments?.length || 0} </span>
+            <CommentIcon /> <span>{post.comments?.length || 0} </span>
           </button>
         </div>
       </div>

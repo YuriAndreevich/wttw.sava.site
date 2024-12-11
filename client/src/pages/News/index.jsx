@@ -1,6 +1,6 @@
 import  { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { PopularPosts } from "./PopularPosts";
+import { PopularPosts } from "./components/PopularPosts";
 import { getAllPosts } from "../../redux/features/post/postSlice";
 import styles from './News.module.scss';
 import Card from './components/Card'

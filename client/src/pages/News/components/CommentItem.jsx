@@ -1,3 +1,4 @@
+import React from 'react'
 
 export const CommentItem = ({ cmt }) => {
     const avatar = cmt.comment.trim().toUpperCase().split('').slice(0, 2)

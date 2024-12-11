@@ -6,9 +6,11 @@ export const getUserRole = () => {
 
   try {
     const decodedToken = jwtDecode(token);
+    console.log(decodedToken?.role)
     return decodedToken?.role || null;
   } catch (error) {
     console.error("Ошибка декодирования токена:", error);
     return null;
   }
+
 };

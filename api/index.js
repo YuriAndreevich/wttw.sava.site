@@ -7,13 +7,13 @@ import fileUpload from 'express-fileupload';
 import authRoute from './routes/auth.js';
 import postRoute from './routes/posts.js';
 import commentRoute from './routes/comments.js';
-import { initializeChat } from './chat.js'; 
+// import { initializeChat } from './chat.js'; 
 import { createServer } from 'http';
 dotenv.config();
 
 const app = express();
 const server = createServer(app);
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3002;
 const MONGODB_URI = process.env.MONGODB_URI;
 
 mongoose.set('strictQuery', true);
@@ -34,7 +34,7 @@ app.use('/api/posts', postRoute);
 app.use('/api/comments', commentRoute);
 
 
-initializeChat(server);
+// initializeChat(server);
 
 async function start() {
     try {

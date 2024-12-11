@@ -42,8 +42,8 @@ const Navbar = () => {
         <Title>Портал «Окно в мир»</Title>
         {isAuth ? (
           <>
-            <Link to="/admin">
-              <img src={Img} alt="admin" className="h-8 w-8 mr-4 rounded-xl" />
+            <Link to="/crm">
+              <img src={Img} alt="avatar" className="" />
             </Link>
             <button
               onClick={logoutHandler}

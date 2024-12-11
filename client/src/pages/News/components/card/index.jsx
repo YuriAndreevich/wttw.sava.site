@@ -4,6 +4,7 @@ import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import CommentIcon from '@mui/icons-material/Comment';
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
+import { Text, Title } from 'components/UI';
 
 const Card = ({ post }) => {
   if (!post) {
@@ -20,7 +21,8 @@ const Card = ({ post }) => {
             <img
               src={`${import.meta.env.VITE_API_URL}/api/uploads/${post.imgUrl}`}
               alt="img"
-              className="object-cover w-full"
+              className={styles.card__image}
+
             />
           ) : (
             <img
@@ -39,8 +41,8 @@ const Card = ({ post }) => {
               </span>
             ))}
           </div>
-          <h4>{post.title}</h4>
-          <p>{post.text}</p>
+          <Title>{post.title}</Title>
+          <Text>{post.text}</Text>
         </div>
         <div className={styles.card__footer}>
           <div className={styles.user}>

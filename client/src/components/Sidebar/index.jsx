@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Link } from "react-router-dom";
 import { tabsLinks } from "./tabsLinks"; 
 import styles from "./Sidebar.module.scss"; 
