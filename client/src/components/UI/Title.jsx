@@ -6,6 +6,7 @@ function Title({ children }) {
     fontSize: `${titleFontSize}rem`,
     textAlign: 'center',
     fontWeight: '600',
+    
   };
 
   return <h1 style={style}>{children}</h1>;

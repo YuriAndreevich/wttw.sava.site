@@ -12,6 +12,12 @@ const Card = ({ post }) => {
       <div className="text-xl text-center text-white p-20">Загрузка...</div>
     );
   }
+  const maxLengthText = (text, maxLength) => {
+    if (text.length > maxLength){
+      return text.slice(0, maxLength) + '...'
+    } return text
+
+  }
 
   return (
     <Link to={`/news/${post._id}`}>
@@ -41,13 +47,13 @@ const Card = ({ post }) => {
               </span>
             ))}
           </div>
-          <Title>{post.title}</Title>
-          <Text>{post.text}</Text>
+          <Title>{maxLengthText(post.title, 35)}</Title>
+          <Text>{maxLengthText(post.text, 150)}</Text>
         </div>
         <div className={styles.card__footer}>
           <div className={styles.user}>
             <img
-              src="https://i.pravatar.cc/40?img=2"
+              src={noImage}
               alt="user__image"
               className={styles.user__image}
             />

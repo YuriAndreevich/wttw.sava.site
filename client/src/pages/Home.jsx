@@ -6,11 +6,13 @@ import { Title } from "components/UI";
 function Home() {
   return (
     <>
+        <Title>Тренажеры</Title>
       <Training />
       <Title>Новости</Title>
       <News />
       <Title>Контакты</Title>
       <Contacts />
+
     </>
   );
 }

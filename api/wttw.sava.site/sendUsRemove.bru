@@ -1,0 +1,22 @@
+meta {
+  name: sendUsRemove
+  type: http
+  seq: 10
+}
+
+get {
+  url: http://localhost:3002/api/sendUs
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY3NTUxMWI5NjNiY2JmMjg2ZjJjMDYyYSIsImlhdCI6MTczMzkyOTI5MywiZXhwIjoxNzM2NTIxMjkzfQ.NP3t_ZKLb6e-35jcTexFwAeXqsgfkkQLPm6GmRqxu9U
+}
+
+body:json {
+  {
+  "title":"tile",
+  "text":"text"
+  }
+}

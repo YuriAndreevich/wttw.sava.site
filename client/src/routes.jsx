@@ -30,6 +30,8 @@ import { RegisterPage } from "pages/RegisterPage";
 import PostPage from "pages/News/components/PostPage";
 
 import Crm from "pages/Crm";
+import {CreatePostPage} from 'pages/Crm/CreatePost'
+import SendUs from 'pages/Crm/sendUs'
 
 import PrivateRoute from "components/PrivateRoute";
 // import VideoChat from "pages/VideoChat"
@@ -79,6 +81,22 @@ const routes = [
     element: (
       <PrivateRoute>
         <Crm />
+      </PrivateRoute>
+    ),
+  },
+  {
+    path: "/crm/CreatePostPage",
+    element: (
+      <PrivateRoute>
+           <CreatePostPage />
+      </PrivateRoute>
+    ),
+  },
+  {
+    path: "/crm/SendUs",
+    element: (
+      <PrivateRoute>
+           <SendUs />
       </PrivateRoute>
     ),
   },

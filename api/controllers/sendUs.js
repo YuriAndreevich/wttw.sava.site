@@ -4,11 +4,13 @@ import { fileURLToPath } from 'url'
 
 export const createSendUs = async (req, res) => {
     try {
-        const { title, text } = req.body
+        const { title, email, name, text } = req.body
 
         const newSendUs = new SendUs({
             title,
             text,
+            email,
+            name,
         })
    
         await newSendUs.save()
@@ -19,15 +21,13 @@ export const createSendUs = async (req, res) => {
 }
 
 export const getAll = async (req, res) => {
-    try {k
-        // Получаем все посты SendUs и сортируем по дате создания
+    try {
         const sendUs = await SendUs.find().sort('-createdAt')
 
         if (!sendUs || sendUs.length === 0) {
-            return res.json({ message: 'Постов нет' })
+            return res.json({ message: 'Сообщений нет' })
         }
 
-        // Возвращаем список постов
         res.json({ sendUs })
     } catch (error) {
         res.json({ message: 'Что-то пошло не так.' })
@@ -61,16 +61,15 @@ export const getMyPosts = async (req, res) => {
     }
 }
 
-export const removePost = async (req, res) => {
+export const removeSendUs = async (req, res) => {
     try {
-        const post = await Post.findByIdAndDelete(req.params.id)
-        if (!post) return res.json({ message: 'Такого поста не существует' })
+        const sendUs = await SendUs.findByIdAndDelete(req.params.id)
+        if (!sendUs) return res.json({ message: 'Такого сообщения не существует' })
 
-        await User.findByIdAndUpdate(req.userId, {
+        await SendUs.findByIdAndUpdate( req.params.id, {
             $pull: { posts: req.params.id },
         })
-
-        res.json({ message: 'Пост был удален.' })
+        res.json({ message: 'Сообщение был удалено.' })
     } catch (error) {
         res.json({ message: 'Что-то пошло не так.' })
     }

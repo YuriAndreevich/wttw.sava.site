@@ -1,0 +1,21 @@
+:root {
+  --base-color: rgb(89, 139, 146);
+}
+.hamburger {
+    position: absolute; /* Теперь в левом верхнем углу */
+    top: 20px;
+    left: 18px;
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1000; /* Гамбургер должен быть выше остальных элементов */
+  }
+  ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }

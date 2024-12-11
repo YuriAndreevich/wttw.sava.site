@@ -10,6 +10,7 @@ import {
   Typography,
   Box,
 } from "@mui/material";
+import { Text } from "../components/UI";
 
 export const LoginPage = () => {
   const [username, setUsername] = useState("");
@@ -100,7 +101,7 @@ export const LoginPage = () => {
           disabled={isLoading}
           sx={{ flex: 1 }}
         >
-          Войти
+          <Text>Войти</Text>
         </Button>
         <Link
           to="/register"

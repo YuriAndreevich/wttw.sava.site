@@ -1,23 +1,26 @@
 import { useDispatch } from 'react-redux';
 import { increaseFont, decreaseFont } from '../redux/fontSlice';
+import { Button } from '@mui/material';
 
 function FontButtons() {
   const dispatch = useDispatch();
 
   return (
-    <div className="flex justify-center space-x-4">
-      <button
+    <div >
+      <Button
+      style={{margin:'10px'}}
+      variant="contained"
         onClick={() => dispatch(increaseFont())}
         className=""
       >
-        +
-      </button>
-      <button
+        + А
+      </Button>
+      <Button variant="contained"
         onClick={() => dispatch(decreaseFont())}
         className=""
       >
-        -
-      </button>
+        - а
+      </Button>
     </div>
   );
 }

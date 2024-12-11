@@ -7,11 +7,12 @@ import TerrCenterIMG from "assets/img/terr_center.jpg";
 import PoliklinikaIMG from "assets/img/poliklinika.jpg";
 import BankIMG from "assets/img/BankIMG.png";
 import AvariiIMG from "assets/img/avarii/avarii.jpg";
-import style from './Card.module.scss';
-import HoverText from "../HoverText";
-import 'swiper/css';
-import 'swiper/css/pagination';
+import style from "./Card.module.scss";
+import HoverText from "../HoverText";  // Импортируем HoverText
+import "swiper/css";
+import "swiper/css/pagination";
 import { Text } from "components/UI";
+import useWindowSize from "../../../../hooks/useWindowSize"; // импорт хука
 
 const trainingData = [
   {
@@ -51,34 +52,61 @@ const TrainingCardItem = ({ link, image, title }) => (
     <div className={style.imageContainer}>
       <img src={image} alt={title} className={style.cardImg} />
       <div className={style.hoverText}>
-      <Text>{title}</Text>
+        <HoverText title={title} />
       </div>
     </div>
   </Link>
 );
 
-export default function TrainingCard() {
+export default function TrainingCard({ isMain }) {
+  const { width: screenWidth } = useWindowSize();
+
   return (
     <div className={style.container}>
-<Swiper
-  slidesPerView="auto"
-  modules={[Navigation, FreeMode, Pagination, Autoplay]} 
-  spaceBetween={10} 
-  navigation 
-  freeMode={true}
-  loop={true} 
->
-
-        {trainingData.map((item, index) => (
-          <SwiperSlide key={index} className={style.slider}>
+      {isMain ? (
+        <div className="card__page">
+          {trainingData.map((item, index) => (
             <TrainingCardItem
+              key={index}
               link={item.link}
               image={item.image}
               title={item.title}
             />
-          </SwiperSlide>
-        ))}
-      </Swiper>
+          ))}
+        </div>
+      ) : (
+        screenWidth < 900 ? (
+          <Swiper
+            slidesPerView="auto"
+            modules={[Navigation, FreeMode, Pagination, Autoplay]}
+            spaceBetween={10}
+            navigation
+            freeMode={true}
+            loop={true}
+          >
+            {trainingData.map((item, index) => (
+              <SwiperSlide key={index} className={style.slider}>
+                <TrainingCardItem
+                  link={item.link}
+                  image={item.image}
+                  title={item.title}
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <div className="card__page">
+            {trainingData.map((item, index) => (
+              <TrainingCardItem
+                key={index}
+                link={item.link}
+                image={item.image}
+                title={item.title}
+              />
+            ))}
+          </div>
+        )
+      )}
     </div>
   );
 }

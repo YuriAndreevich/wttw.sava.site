@@ -1,0 +1,120 @@
+/* AddPostPage.module.css */
+
+/* Стили для формы */
+.formContainer {
+    padding: 20px;
+  }
+  
+  .form {
+    width: 33%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #2d2d2d;
+    border-radius: 8px;
+    color: white;
+  }
+  
+  .fileUpload {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6c6c6c;
+    border: 2px dashed #ddd;
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .fileInput {
+    display: none;
+  }
+  
+  .imagePreview {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .inputLabel {
+    display: block;
+    margin-top: 10px;
+  }
+  
+  .textInput, .textareaInput {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    background-color: #444;
+    border: 1px solid #ccc;
+    color: white;
+  }
+  
+  .textareaInput {
+    height: 100px;
+    resize: none;
+  }
+  
+  .buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .submitButton, .clearButton {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submitButton {
+    background-color: #4CAF50;
+  }
+  
+  .clearButton {
+    background-color: #f44336;
+  }
+  
+  /* Стили для таблицы */
+  .tableWrapper {
+    margin-top: 30px;
+  }
+  
+  .postTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #333;
+    color: white;
+    border-radius: 8px;
+  }
+  
+  .postTable th,
+  .postTable td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+  }
+  
+  .postTable th {
+    background-color: #555;
+    font-weight: bold;
+  }
+  
+  .postTable tr:nth-child(even) {
+    background-color: #444;
+  }
+  
+  .postTable tr:hover {
+    background-color: #555;
+  }
+  
+  .postTable .tableImage {
+    width: 100px;
+    height: auto;
+  }
+  

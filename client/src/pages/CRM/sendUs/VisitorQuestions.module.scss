@@ -1,0 +1,63 @@
+/* VisitorQuestions.module.scss */
+.tableWrapper {
+    margin-bottom: 20px;
+  }
+  
+  .questionsTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .questionsTable th,
+  .questionsTable td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd;
+    white-space: nowrap;
+  }
+  
+  .questionsTable th {
+    background-color: #f4f4f4;
+    font-weight: bold;
+  }
+  
+  .questionsTable tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .questionsTable tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .questionsTable td {
+    color: #555;
+    font-size: 14px;
+  }
+  
+  .questionsTable th {
+    color: #333;
+    font-size: 16px;
+  }
+  
+  .questionsTable tbody {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .questionsTable thead {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .questionsTable tr {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .questionsTable td, .questionsTable th {
+    flex: 1; /* Каждая ячейка теперь занимает всю доступную ширину */
+    text-align: center;
+  }
+  
