@@ -1,0 +1,46 @@
+/* Контейнер всей страницы */
+.page-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;  /* Задаем высоту всей страницы */
+  }
+  
+  /* Контейнер для изображения, которое должно занять оставшееся пространство */
+  .content {
+    flex-grow: 1;  /* Это заставит изображение занять оставшееся пространство */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+  
+  /* Стили для изображения */
+  .post__image {
+    max-width: 100%;    /* Ширина изображения будет 100% от доступной */
+    height: auto;       /* Высота будет автоматически сохраняться пропорциональной */
+    object-fit: contain; /* Сохраняет пропорции изображения, не обрезая */
+    object-position: center;
+    max-height: 100%;   /* Ограничиваем максимальную высоту, чтобы не выходило за пределы контейнера */
+  }
+  
+  /* Контейнер для текста */
+  .text-container {
+    background-color: rgba(0, 0, 0, 0.7);  /* Немного затемняем фон текста */
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  /* Заголовок */
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  /* Текст */
+  .text {
+    font-size: 1.125rem;
+    line-height: 1.6;
+  }
+  
