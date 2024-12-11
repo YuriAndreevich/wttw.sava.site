@@ -1,4 +1,3 @@
-import React from 'react';
 import styles from './Layout.module.scss';
 import Sidebar from 'components/Sidebar';
 import Container from 'components/Container';

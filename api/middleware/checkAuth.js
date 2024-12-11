@@ -1,23 +1,17 @@
 import jwt from 'jsonwebtoken';
 
 export const checkAuth = (req, res, next) => {
-    const token = (req.headers.authorization || '').replace(/Bearer\s?/, '');
+  const token = req.headers.authorization?.split(" ")[1];  // Извлекаем токен из заголовков
 
-    if (token) {
-        try {
-            const decoded = jwt.verify(token, process.env.SECRET_KEY);
+  if (!token) {
+    return res.status(403).json({ message: 'Нет доступа. Требуется токен.' });
+  }
 
-            req.userId = decoded.id;
-            next();
-        } catch (error) {
-            console.error("Ошибка при валидации токена: ", error);
-            return res.status(403).json({
-                message: 'Нет доступа.',
-            });
-        }
-    } else {
-        return res.status(401).json({
-            message: 'Нет доступа.',
-        });
-    }
+  try {
+    const decoded = jwt.verify(token, process.env.SECRET_KEY);  // Проверка токена
+    req.userId = decoded.id;  // Добавление userId в запрос
+    next();
+  } catch (error) {
+    return res.status(401).json({ message: 'Неавторизован. Неверный токен.' });
+  }
 };

@@ -1,9 +1,11 @@
 import { AddPostPage } from './News/components/AddPostPage'
 
-function CRM() {
+function Crm() {
+
+  
   return (
     <div><AddPostPage/></div>
   )
 }
 
-export default CRM
+export default Crm

@@ -19,13 +19,13 @@ function App() {
       <ScrollToTopButton />
       <ToastNotification />
       <Routes>
-        {routes.map((route, index) => {
-          const { component: Component, path } = route;
+      {routes.map((route, index) => {
+          const { element, path } = route;
           return (
-            <Route 
-              key={index} 
-              path={path} 
-              element={<Component />} 
+            <Route
+              key={index}
+              path={path}
+              element={element} // Используем `element` вместо `component`
             />
           );
         })}

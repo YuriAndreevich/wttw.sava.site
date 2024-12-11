@@ -29,59 +29,59 @@ import { LoginPage } from "pages/LoginPage";
 import { RegisterPage } from "pages/RegisterPage";
 import PostPage from "pages/News/components/PostPage";
 
-import CRM from "pages/CRM";
+import Crm from "pages/Crm";
 
 import PrivateRoute from "components/PrivateRoute";
 // import VideoChat from "pages/VideoChat"
 const routes = [
-  { path: "/", component: Home },
-  { path: "/news", component: News },
-  { path: "/news/:id", component: PostPage },
-  { path: "/login", component: LoginPage },
-  { path: "/register", component: RegisterPage },
-  { path: "/konvent-o-prav-inval", component: KonventOPravInval },
-  { path: "/nac-plan-2017-2025", component: NacPlan20172025 },
+  { path: "/", element: <Home /> },
+  { path: "/news", element: <News /> },
+  { path: "/news/:id", element: <PostPage /> },
+  { path: "/login", element: <LoginPage /> },
+  { path: "/register", element: <RegisterPage /> },
+  { path: "/konvent-o-prav-inval", element: <KonventOPravInval /> },
+  { path: "/nac-plan-2017-2025", element: <NacPlan20172025 /> },
   {
     path: "/postanovlenie-o-tech-sredstvah",
-    component: PostanovlenieOGosReestreTehSredstv,
+    element: <PostanovlenieOGosReestreTehSredstv />,
   },
   {
     path: "/postanovlenie-sm-rb-o-vzaimodeistvii",
-    component: PostanovlenieOMezved,
+    element: <PostanovlenieOMezved />,
   },
-  { path: "/audiobiblioteka-dlya-nezryachikh", component: Audiobiblioteka },
-  { path: "/zakon-o-gos-soc-pomoschi", component: GosPomosh },
-  { path: "/zakon-o-soc-lgotah", component: GosLgoti },
-  { path: "/zakon-o-prav-inv", component: OPravahInvalidovSicIntegraciya },
+  { path: "/audiobiblioteka-dlya-nezryachikh", element: <Audiobiblioteka /> },
+  { path: "/zakon-o-gos-soc-pomoschi", element: <GosPomosh /> },
+  { path: "/zakon-o-soc-lgotah", element: <GosLgoti /> },
+  { path: "/zakon-o-prav-inv", element: <OPravahInvalidovSicIntegraciya /> },
   {
     path: "/postanovlenie-sm-rb-o-posobii",
-    component: OPosobiiInvalid1Group80let,
+    element: <OPosobiiInvalid1Group80let />,
   },
-  { path: "/sit-pomosh-invalidam", component: SituatPomosh },
-  { path: "/mat-pomosh", component: MatPomosh },
-  { path: "/trainings/Clinic", component: Clinic },
-  { path: "/trainings/Pharmacy", component: Pharmacy },
-  { path: "/trainings/SocialCenter", component: SocialCenter },
-  { path: "/trainings/Shop", component: Shop },
-  { path: "/contacts", component: Contacts },
-  { path: "/trainings", component: Trainings },
-  { path: "/trainings/bank", component: Bank },
-  { path: "/algoritm-posesheniya", component: Algoritm },
-  { path: "/lgoti-ludyam-s-invalidnostyu", component: LgotiSInval },
-  { path: "/trainings/EmergencySituations", component: EmergencySituations },
-  { path: "/putevoditel", component: Putevoditel },
-  // { path: "/VideoChat", component: VideoChat },
-
+  { path: "/sit-pomosh-invalidam", element: <SituatPomosh /> },
+  { path: "/mat-pomosh", element: <MatPomosh /> },
+  { path: "/trainings/Clinic", element: <Clinic /> },
+  { path: "/trainings/Pharmacy", element: <Pharmacy /> },
+  { path: "/trainings/SocialCenter", element: <SocialCenter /> },
+  { path: "/trainings/Shop", element: <Shop /> },
+  { path: "/contacts", element: <Contacts /> },
+  { path: "/trainings", element: <Trainings /> },
+  { path: "/trainings/bank", element: <Bank /> },
+  { path: "/algoritm-posesheniya", element: <Algoritm /> },
+  { path: "/lgoti-ludyam-s-invalidnostyu", element: <LgotiSInval /> },
+  { path: "/trainings/EmergencySituations", element: <EmergencySituations /> },
+  {
+    path: "/putevoditel",
+    element: <Putevoditel />,
+  },
+  // { path: "/VideoChat", element: VideoChat },
   {
     path: "/crm",
-    component: PrivateRoute,
-    render: (props) => (
+    element: (
       <PrivateRoute>
-        <CRM {...props} />
+        <Crm />
       </PrivateRoute>
     ),
-  }
-  
+  },
 ];
 
 export default routes;

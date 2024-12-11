@@ -38,14 +38,18 @@ export const loginUser = createAsyncThunk(
   }
 );
 
-export const getMe = createAsyncThunk('auth/getMe', async (_, { rejectWithValue }) => {
+export const getMe = createAsyncThunk('auth/getMe', async (_, { rejectWithValue, getState }) => {
+  const token = getState().auth.token;
   try {
-    const { data } = await axios.get('/api/auth/getMe'); 
+    const { data } = await axios.get('/api/auth/getMe', {
+      headers: { Authorization: `Bearer ${token}` }
+    });
     return data;
   } catch (error) {
     return rejectWithValue(error.response?.data || error.message);
   }
 });
+
 const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -55,7 +59,7 @@ const authSlice = createSlice({
       state.token = null;
       state.isLoading = false;
       state.status = null;
-      window.localStorage.removeItem('token'); 
+      window.localStorage.removeItem('token');
     },
   },
   extraReducers: (builder) => {
@@ -107,7 +111,9 @@ const authSlice = createSlice({
   },
 });
 
-export const checkIsAuth = (state) => Boolean(state.auth.token);
+
+export const checkIsAuth = (state) => Boolean(state.auth.user && state.auth.token);
+
 
 export const { logout } = authSlice.actions;
 export default authSlice.reducer;

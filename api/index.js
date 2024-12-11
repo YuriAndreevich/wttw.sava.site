@@ -7,6 +7,7 @@ import fileUpload from 'express-fileupload';
 import authRoute from './routes/auth.js';
 import postRoute from './routes/posts.js';
 import commentRoute from './routes/comments.js';
+import sendUsRoute from './routes/sendUs.js';
 // import { initializeChat } from './chat.js'; 
 import { createServer } from 'http';
 dotenv.config();
@@ -32,6 +33,7 @@ app.use('/api/uploads/', express.static('uploads'));
 app.use('/api/auth', authRoute);
 app.use('/api/posts', postRoute);
 app.use('/api/comments', commentRoute);
+app.use('/api/sendUs', sendUsRoute);
 
 
 // initializeChat(server);
