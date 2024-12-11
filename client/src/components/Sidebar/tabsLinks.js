@@ -2,6 +2,7 @@ export const tabsLinks = [
   { label: "Главная", route: "/" },
   { label: "Тренажеры", route: "/trainings" },
   { label: "Новости", route: "news" },
+  { label: "Написать нам", route: "SendUsForm" },
   {
     label: "Нормативно-правовая база",
     route: [

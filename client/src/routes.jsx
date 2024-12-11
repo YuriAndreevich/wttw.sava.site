@@ -32,6 +32,8 @@ import PostPage from "pages/News/components/PostPage";
 import Crm from "pages/Crm";
 import {CreatePostPage} from 'pages/Crm/CreatePost'
 import SendUs from 'pages/Crm/sendUs'
+import SendUsForm from 'components/SendUs'
+
 
 import PrivateRoute from "components/PrivateRoute";
 // import VideoChat from "pages/VideoChat"
@@ -71,6 +73,7 @@ const routes = [
   { path: "/algoritm-posesheniya", element: <Algoritm /> },
   { path: "/lgoti-ludyam-s-invalidnostyu", element: <LgotiSInval /> },
   { path: "/trainings/EmergencySituations", element: <EmergencySituations /> },
+  { path: "/SendUsForm", element: <SendUsForm /> },
   {
     path: "/putevoditel",
     element: <Putevoditel />,

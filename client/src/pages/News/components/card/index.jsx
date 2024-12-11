@@ -50,7 +50,7 @@ const Card = ({ post }) => {
           <Title>{maxLengthText(post.title, 35)}</Title>
           <Text>{maxLengthText(post.text, 150)}</Text>
         </div>
-        <div className={styles.card__footer}>
+        {/* <div className={styles.card__footer}>
           <div className={styles.user}>
             <img
               src={noImage}
@@ -66,7 +66,7 @@ const Card = ({ post }) => {
               <span>{post.comments?.length || 0}</span>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </Link>
   );

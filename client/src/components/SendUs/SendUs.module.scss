@@ -1,0 +1,76 @@
+// src/components/SendUs.module.scss
+.sendUsForm {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+  }
+  
+  .sendUsForm h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .sendUsForm label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .sendUsForm input,
+  .sendUsForm textarea {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+  }
+  
+  .sendUsForm textarea {
+    resize: vertical;
+    height: 120px;
+  }
+  
+  .sendUsForm button {
+    width: 100%;
+    padding: 10px;
+    background-color: rgb(89, 139, 146);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .sendUsForm button:hover {
+    background-color: rgb(62, 99, 104);
+  }
+  
+  .sendUsForm .fileInput {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+  }
+  
+  .sendUsForm .fileInput input {
+    border: 1px solid #ddd;
+  }
+  
+  .sendUsForm .filePreview {
+    margin-top: 10px;
+    max-width: 100%;
+  }
+  
+  .sendUsForm .filePreview img {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+  

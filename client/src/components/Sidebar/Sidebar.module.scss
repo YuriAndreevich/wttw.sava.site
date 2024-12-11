@@ -17,8 +17,9 @@
   z-index: 999; 
   display: flex;
   align-items: center;
-  justify-content: center;
+
 }
+
 .sidebar::-webkit-scrollbar{
   display: none;
 }
@@ -56,20 +57,17 @@
 }
 
 .sidebar nav ul li a {
-  color: #000;
+  color: #fff;
   text-decoration: none;
   font-size: 16px;
 }
 
-.sidebar nav ul li a:hover {
-  color: #3f3f3f;
-}
-
-.submenuLabel {
-  font-weight: bold;
-  margin-bottom: 10px;
-  cursor: pointer;
-}
+// .sidebar nav ul li a:hover {
+//   color: #3a4249;
+// }
+// .sidebar nav ul div:hover {
+//   color: #3f3f3f;
+// }
 
 .sidebar .logo {
   font-size: 1.5rem;
