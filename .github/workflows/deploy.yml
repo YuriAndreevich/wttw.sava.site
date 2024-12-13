@@ -23,7 +23,8 @@ jobs:
       - name: Check if Client was updated
         id: client
         run: |
-          git diff --exit-code --quiet HEAD~1..HEAD -- client
+          git fetch origin
+          git diff --exit-code --quiet origin/main -- client
         continue-on-error: true  # Не прерываем выполнение, если изменений нет
 
       - name: Install Dependencies and Build Client
@@ -43,7 +44,8 @@ jobs:
       - name: Check if API was updated
         id: api
         run: |
-          git diff --exit-code --quiet HEAD~1..HEAD -- api
+          git fetch origin
+          git diff --exit-code --quiet origin/main -- api
         continue-on-error: true  # Не прерываем выполнение, если изменений нет
 
       - name: Install Dependencies and Build API
