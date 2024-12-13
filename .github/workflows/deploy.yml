@@ -27,6 +27,12 @@ jobs:
           git diff --exit-code --quiet origin/main -- client
         continue-on-error: true  # Не прерываем выполнение, если изменений нет
 
+      - name: Clear Yarn cache for Client
+        if: steps.client.outcome == 'success'
+        run: |
+          cd client
+          yarn cache clean  # Очистка кэша перед установкой зависимостей
+
       - name: Install Dependencies and Build Client
         if: steps.client.outcome == 'success'  # Если были изменения в client
         run: |
@@ -47,6 +53,12 @@ jobs:
           git fetch origin
           git diff --exit-code --quiet origin/main -- api
         continue-on-error: true  # Не прерываем выполнение, если изменений нет
+
+      - name: Clear Yarn cache for API
+        if: steps.api.outcome == 'success'
+        run: |
+          cd api
+          yarn cache clean  # Очистка кэша перед установкой зависимостей
 
       - name: Install Dependencies and Build API
         if: steps.api.outcome == 'success'  # Если были изменения в api
