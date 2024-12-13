@@ -8,11 +8,11 @@ import PoliklinikaIMG from "assets/img/poliklinika.jpg";
 import BankIMG from "assets/img/BankIMG.png";
 import AvariiIMG from "assets/img/avarii/avarii.jpg";
 import style from "./Card.module.scss";
-import HoverText from "../HoverText";  // Импортируем HoverText
+import HoverText from "../HoverText";
 import "swiper/css";
 import "swiper/css/pagination";
-import { Text } from "components/UI";
-import useWindowSize from "../../../../hooks/useWindowSize"; // импорт хука
+import useWindowSize from "../../../../hooks/useWindowSize";
+import PropTypes from "prop-types";
 
 const trainingData = [
   {
@@ -57,6 +57,12 @@ const TrainingCardItem = ({ link, image, title }) => (
     </div>
   </Link>
 );
+
+TrainingCardItem.propTypes = {
+  link: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+};
 
 export default function TrainingCard({ isMain }) {
   const { width: screenWidth } = useWindowSize();
@@ -110,3 +116,7 @@ export default function TrainingCard({ isMain }) {
     </div>
   );
 }
+
+TrainingCard.propTypes = {
+  isMain: PropTypes.bool.isRequired,
+};

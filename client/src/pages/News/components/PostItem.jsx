@@ -1,18 +1,19 @@
+import PropTypes from 'prop-types';
 import { Link } from "react-router-dom";
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import CommentIcon from '@mui/icons-material/Comment';
+
 export const PostItem = ({ post }) => {
   if (!post) {
     return (
       <div className="text-xl text-center text-white p-20">Загрузка...</div>
     );
   }
+
   return (
     <Link to={`/${post._id}`}>
       <div className="flex flex-col basis-1/4 flex-grow">
-        <div
-          className={post.imgUrl ? "flex rouded-sm h-80" : "flex rounded-sm"}
-        >
+        <div className={post.imgUrl ? "flex rouded-sm h-80" : "flex rounded-sm"}>
           {post.imgUrl && (
             <img
               src={`${import.meta.env.VITE_API_URL}/api/${post.imgUrl}`}
@@ -43,4 +44,17 @@ export const PostItem = ({ post }) => {
       </div>
     </Link>
   );
+};
+
+PostItem.propTypes = {
+  post: PropTypes.shape({
+    _id: PropTypes.string.isRequired,
+    imgUrl: PropTypes.string,
+    username: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    views: PropTypes.number.isRequired,
+    comments: PropTypes.arrayOf(PropTypes.shape({
+    })),
+  }).isRequired,
 };

@@ -6,11 +6,11 @@ import './EmergencySituations.scss';
 
 
 import mchsAud from 'assets/mp3/mchs.mp3';
-import electroAud from 'assets/mp3/electro.mp3';
-import gasAud from 'assets/mp3/gas.mp3';
-import liftAud from 'assets/mp3/lift.mp3';
-import policeAud from 'assets/mp3/police.mp3';
-import zkhAud from 'assets/mp3/zkh.mp3';
+// import electroAud from 'assets/mp3/electro.mp3';
+// import gasAud from 'assets/mp3/gas.mp3';
+// import liftAud from 'assets/mp3/lift.mp3';
+// import policeAud from 'assets/mp3/police.mp3';
+// import zkhAud from 'assets/mp3/zkh.mp3';
 
 
 const Avarii = () => {
@@ -18,11 +18,11 @@ const Avarii = () => {
     const [dots, setDots] = useState('.');
     const audio = new Audio(soundFile);
     const mchsAudio = new Audio(mchsAud);
-    const electroAudio = new Audio(electroAud);
-    const gasAudio = new Audio(gasAud);
-    const liftAudio = new Audio(liftAud);
-    const policeAudio = new Audio(policeAud);
-    const zkhAudio = new Audio(zkhAud);
+    // const electroAudio = new Audio(electroAud);
+    // const gasAudio = new Audio(gasAud);
+    // const liftAudio = new Audio(liftAud);
+    // const policeAudio = new Audio(policeAud);
+    // const zkhAudio = new Audio(zkhAud);
 
 
     const categories = [
@@ -75,7 +75,7 @@ const Avarii = () => {
     const [selectedNumber, setSelectedNumber] = useState('');
 
     const handleOptionChange = (event) => {
-        const selectedIndex = event.target.selectedIndex;
+        // const selectedIndex = event.target.selectedIndex;
         const selectedOption = event.target.value;
 
         // Находим объект категории по выбранной подкатегории
@@ -144,15 +144,15 @@ const Avarii = () => {
   };
   
 
-  let selectedAudio;
-        switch (selectedNumber) {
-        case '112':
-            selectedAudio = mchsAudio;
-            break;
-        default:
-            selectedAudio = electroAudio;
-            break;
-}
+//   let selectedAudio;
+//         switch (selectedNumber) {
+//         case '112':
+//             selectedAudio = mchsAudio;
+//             break;
+//         default:
+//             selectedAudio = electroAudio;
+//             break;
+// }
 
     const [openModal, setOpenModal] = useState(false);
 

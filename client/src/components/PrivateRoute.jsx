@@ -1,23 +1,24 @@
 import { Navigate } from "react-router-dom";
 import { useUserRole } from "../utils/auth";
+import PropTypes from 'prop-types';
 
 const PrivateRoute = ({ children }) => {
   const userRole = useUserRole();
-  console.log(userRole)
+  console.log(userRole);
 
-  // Проверка состояния загрузки
   if (userRole === null) {
-    // Отобразите загрузочный компонент или ничего, пока роль загружается
     return <div>Loading...</div>;
   }
 
-  // Если роль определена и это "admin", разрешить доступ
-  if (userRole == "admin") {
+  if (userRole === "admin") {
     return children;
   }
 
-  // В остальных случаях перенаправить
   return <Navigate to="/" replace />;
+};
+
+PrivateRoute.propTypes = {
+  children: PropTypes.node.isRequired,  
 };
 
 export default PrivateRoute;

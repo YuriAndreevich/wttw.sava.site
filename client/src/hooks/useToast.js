@@ -1,10 +1,10 @@
-export const useToast = () => {
-    const [toast, setToast] = useState(null);
+// export const useToast = () => {
+//     const [toast, setToast] = useState(null);
   
-    const showToast = (message) => {
-      setToast(message);
-    };
+//     const showToast = (message) => {
+//       setToast(message);
+//     };
   
-    return { toast, showToast };
-  };
+//     return { toast, showToast };
+//   };
   

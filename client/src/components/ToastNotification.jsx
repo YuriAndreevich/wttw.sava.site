@@ -1,19 +1,16 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import { Snackbar, Alert } from "@mui/material";
 
 export const ToastNotification = () => {
   const [open, setOpen] = useState(false);
-  const [message, setMessage] = useState("");
+  const [message] = useState("");
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") return;
     setOpen(false);
   };
 
-  const showToast = (msg) => {
-    setMessage(msg);
-    setOpen(true);
-  };
+
 
   return (
     <>

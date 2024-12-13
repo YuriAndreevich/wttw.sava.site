@@ -41,7 +41,7 @@
         const [spendBalance, setSpendBalance] = useState(0)
         const [paymentMethod, setPaymentMethod] = useState(0)
         const [shopListArray, setShopListArray] = useState([]);
-        const [adminHelp, setAdminHelp] = useState(false)
+        // const [adminHelp, setAdminHelp] = useState(false)
 
         const buyProduct = (cost) => () => {
             setBalance(balance-cost)
@@ -52,7 +52,7 @@
         } 
 
 
-        const balanceSetAndStage = (bal, stage, product) => () => {
+        const balanceSetAndStage = (bal, stage) => () => {
             setBalance(bal)
             setStage(stage)
         }

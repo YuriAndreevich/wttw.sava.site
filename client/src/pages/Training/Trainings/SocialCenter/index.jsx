@@ -1,6 +1,6 @@
 import  { useState } from "react";
 import "./SocialCenter.scss";
-
+import PropTypes from "prop-types";
 import uslugaPng from "assets/img/usluga.png";
 
 import A1 from "assets/img/services/A/A1.jpg";
@@ -48,7 +48,21 @@ const Dropdown = ({ options, selectedOption, onOptionChange }) => {
     </select>
   );
 };
-
+Dropdown.propTypes = {
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      usluga: PropTypes.string.isRequired,
+      otdel: PropTypes.string.isRequired,
+      imageUrl: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  selectedOption: PropTypes.shape({
+    usluga: PropTypes.string.isRequired,
+    otdel: PropTypes.string.isRequired,
+    imageUrl: PropTypes.string.isRequired,
+  }).isRequired,
+  onOptionChange: PropTypes.func.isRequired,
+};
 const dropdownOptions = [
   {
     usluga: "Оказание социально – педагогических услуг",
@@ -145,14 +159,14 @@ function SocCenter() {
     return dropdownOptions.filter((option) => option.otdel === otdel);
   };
 
-  const handleServiceButtonClick = (service) => {
-    if (service.otdel === selectedOption.otdel) {
-      console.log(`Выбрана услуга: ${service.usluga}`);
-      // Ваш код для обработки выбора услуги
-    } else {
-      alert("Ошибка: Вы выбрали услугу из неверного раздела.");
-    }
-  };
+  // const handleServiceButtonClick = (service) => {
+  //   if (service.otdel === selectedOption.otdel) {
+  //     console.log(`Выбрана услуга: ${service.usluga}`);
+  //     // Ваш код для обработки выбора услуги
+  //   } else {
+  //     alert("Ошибка: Вы выбрали услугу из неверного раздела.");
+  //   }
+  // };
 
   return (
     <div

@@ -1,4 +1,3 @@
-import React from "react";
 import image from "assets/img/United-Nations-PD1-transformed.png";
 import pdf from "assets/pdf/Путеводитель 2018.pdf";
 

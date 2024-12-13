@@ -18,7 +18,7 @@ import stomatolog from "assets/img/doctors/stomatolog.jpg";
 import hirurg from "assets/img/doctors/hirurg.jpg";
 import vhod_v_pol from "assets/img/vhod_v_polikliniku.png";
 import administratorimg from "assets/img/administrator.png";
-import Rodal from 'rodal';
+// import Rodal from 'rodal';
 import 'rodal/lib/rodal.css';
 import 'react-responsive-modal/styles.css';
 import { Modal } from 'react-responsive-modal';
@@ -40,8 +40,8 @@ function Trenazher2() {
   const [disease, setDisease] = useState("");
   const [floor, setFloor] = useState(0);
   const [cabinet, setCabinet] = useState(0);
-  const [adminHelpStatus, setAdminHelpStatus] = useState(false);
-  const [currentAction, setCurrentAction] = useState(
+  const [adminHelpStatus] = useState(false);
+  const [ setCurrentAction] = useState(
     'Нажмите на кнопку "Я заболел!'
   );
 

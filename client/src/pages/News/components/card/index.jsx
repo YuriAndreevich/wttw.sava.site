@@ -1,7 +1,7 @@
 import styles from './Card.module.scss';
 import noImage from 'assets/noImage.png';
-import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
-import CommentIcon from '@mui/icons-material/Comment';
+// import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+// import CommentIcon from '@mui/icons-material/Comment';
 import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
 import { Text, Title } from 'components/UI';

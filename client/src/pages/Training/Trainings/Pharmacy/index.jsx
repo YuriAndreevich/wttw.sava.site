@@ -36,7 +36,7 @@ function AptekaTrenazher() {
   const [balance, setBalance] = useState(0);
   const [currentBodyPart, setCurrentBodyPart] = useState("");
   const [medecinesArray, setMedecinesArray] = useState([]);
-  const [adminHelpVisible, setAdminHelpVisible] = useState(true);
+  // const [adminHelpVisible, setAdminHelpVisible] = useState(true);
    
 
 
@@ -182,7 +182,11 @@ function AptekaTrenazher() {
 
       {stage === 4 && (
         <div style={{overflow: "hidden"}}>
-          <button onClick={() => { setStage(5); setAdminHelpVisible(false)}} style={{marginTop: "60vh", marginLeft: "23.5vw"}}>Купить лекарства</button>
+          <button onClick={() => { setStage(5);
+            //  setAdminHelpVisible(false)
+            }
+            }
+              style={{marginTop: "60vh", marginLeft: "23.5vw"}}>Купить лекарства</button>
         </div>
       )}
 

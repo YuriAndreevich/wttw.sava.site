@@ -16,8 +16,8 @@ import lor from "assets/img/doctors/lor.jpg";
 import stomatolog from "assets/img/doctors/stomatolog.jpg";
 import hirurg from "assets/img/doctors/hirurg.jpg";
 import vhod_v_pol from "assets/img/vhod_v_polikliniku.png";
-import pred_receipt from 'assets/mp3/pred_receipt.mp3';
-const pred_receipt_aud = new Audio(pred_receipt);
+// import pred_receipt from 'assets/mp3/pred_receipt.mp3';
+// const pred_receipt_aud = new Audio(pred_receipt);
 
 function Trenazher() {
   const [disease, setDisease] = useState(null);
@@ -470,7 +470,9 @@ function Trenazher() {
                         onClick={() => {
                           cabinet === 301
                             ? enterApteka()
-                            : setRightCabinet(false) ; audio.play(pred_receipt_aud)}
+                            : setRightCabinet(false) ;
+                            //  audio.play(pred_receipt_aud)
+                            }
                         }
                       >
                         301
@@ -506,7 +508,9 @@ function Trenazher() {
                         onClick={() => {
                           cabinet === 305
                             ? enterApteka()
-                            : setRightCabinet(false) ; audio.play(pred_receipt_aud)}
+                            : setRightCabinet(false) ;
+                            //  audio.play(pred_receipt_aud)
+                            }
                         }
                       >
                         305

@@ -1,10 +1,9 @@
-import React from 'react';
 
-function SoundButton( {soundFile}) {
-    const playSound = () => {
-      const audio = new Audio(soundFile); 
-      audio.play(); 
-    };
-}
+// function SoundButton( {soundFile}) {
+//     const playSound = () => {
+//       const audio = new Audio(soundFile); 
+//       audio.play(); 
+//     };
+// }
 
-export default SoundButton;
+// export default SoundButton;

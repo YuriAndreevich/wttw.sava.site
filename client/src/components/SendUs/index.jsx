@@ -1,6 +1,5 @@
 // src/components/SendUs.js
 import { useState } from "react";
-import { useDispatch } from "react-redux";
 import axios from "../../axios"; // Убедитесь, что axios настроен для работы с вашим сервером
 import styles from './SendUs.module.scss'; // Подключаем модульные стили
 
@@ -11,7 +10,6 @@ const SendUs = () => {
   const [text, setText] = useState("");
   const [file, setFile] = useState(null);
 
-  const dispatch = useDispatch();
 
   // Обработчик отправки формы
   const submitHandler = async (e) => {

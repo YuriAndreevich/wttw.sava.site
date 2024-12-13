@@ -1,5 +1,3 @@
-import React from "react";
-
 function Putevoditel() {
   return (
     <div style={{ margin: "2.5% 3.5%" }}>

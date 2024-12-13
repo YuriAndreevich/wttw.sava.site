@@ -10,7 +10,7 @@ import c5 from 'assets/mp3/с5.mp3';
 function Bank () {
     
     const [stage, setStage] = useState(0)
-    const [paymentMethod, setPaymentMethod] = useState (0)
+    const [ setPaymentMethod] = useState (0)
     const [prevStage, setPrevStage] = useState(0)
 
     const choosePaymentMethod = (paymentMethod, stage, prevStage) => () => {

@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { Title } from "components/UI"; // Предполагаем, что Title — это компонент для отображения заголовков
+import { Title } from "components/UI";
+import PropTypes from "prop-types";
 
 function HoverText({ title }) {
   const [text, setText] = useState(title);
@@ -8,22 +9,26 @@ function HoverText({ title }) {
   return (
     <div
       onMouseEnter={() => {
-        setText("Начать"); // Меняем текст при наведении
+        setText("Начать");
         setIsHovered(true);
       }}
       onMouseLeave={() => {
-        setText(title); // Возвращаем исходный текст
+        setText(title);
         setIsHovered(false);
       }}
       style={{
         cursor: "pointer",
-        transform: isHovered ? "scale(1.05)" : "scale(1)", // Анимация при наведении
-        transition: "transform 0.3s ease-in-out", // Плавный переход
+        transform: isHovered ? "scale(1.05)" : "scale(1)",
+        transition: "transform 0.3s ease-in-out",
       }}
     >
-      <Title>{text}</Title> {/* Отображаем текст внутри компонента Title */}
+      <Title>{text}</Title>
     </div>
   );
 }
+
+HoverText.propTypes = {
+  title: PropTypes.string.isRequired,
+};
 
 export default HoverText;

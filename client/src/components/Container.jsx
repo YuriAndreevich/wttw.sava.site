@@ -1,6 +1,6 @@
-import React from 'react';
+import PropTypes from 'prop-types';
 
-function Container({ children, className }) {
+function Container({ children, className = '' }) {
   return (
     <main className={className}>
       {children}
@@ -8,4 +8,8 @@ function Container({ children, className }) {
   );
 }
 
+Container.propTypes = {
+  children: PropTypes.node.isRequired,  
+  className: PropTypes.string,         
+}
 export default Container;

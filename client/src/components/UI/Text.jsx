@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-
+import PropTypes from 'prop-types';
 
 function Text({ children, className = '' }) {
   const textFontSize = useSelector((state) => state.font.textFontSize); 
@@ -15,5 +15,10 @@ function Text({ children, className = '' }) {
     </p>
   );
 }
+
+Text.propTypes = {
+  children: PropTypes.node.isRequired,  
+  className: PropTypes.string,          
+};
 
 export default Text;
