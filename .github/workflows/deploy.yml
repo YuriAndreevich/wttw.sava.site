@@ -13,36 +13,45 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Install NVM and Node.js (v20.x)
-        run: |
-          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-          source ~/.bashrc
-          nvm install 20
-          nvm use 20
-          node -v # Проверяем версию Node.js
+      # Устанавливаем Node.js с помощью actions/setup-node
+      - name: Set up Node.js (v20.x)
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
 
-      - name: Install Dependencies (Client)
-        if: contains(github.event.head_commit.message, 'client')
+      # Проверка и деплой client
+      - name: Check if Client was updated
+        id: client
+        run: |
+          git diff --exit-code --quiet HEAD~1..HEAD -- client || echo "Client updated"
+
+      - name: Install Dependencies and Build Client
+        if: steps.client.outputs.stdout == 'Client updated'
         run: |
           cd client
           yarn install
           yarn build
 
       - name: Deploy Client to Server
-        if: contains(github.event.head_commit.message, 'client')
+        if: steps.client.outputs.stdout == 'Client updated'
         run: |
-          scp -i deploy_key.pem -r client/dist/* user@your-server:/var/www/wttw
+          scp -i deploy_key.pem -r client/dist/* user@your-server:/var/www/wttw/dist
           ssh -i deploy_key.pem user@your-server "sudo systemctl restart nginx"
 
-      - name: Install Dependencies (API)
-        if: contains(github.event.head_commit.message, 'api')
+      - name: Check if API was updated
+        id: api
+        run: |
+          git diff --exit-code --quiet HEAD~1..HEAD -- api || echo "API updated"
+
+      - name: Install Dependencies and Build API
+        if: steps.api.outputs.stdout == 'API updated'
         run: |
           cd api
           yarn install
           yarn build
 
       - name: Deploy API to Server
-        if: contains(github.event.head_commit.message, 'api')
+        if: steps.api.outputs.stdout == 'API updated'
         run: |
-          scp -i deploy_key.pem -r api/* user@your-server:/path/to/api
+          scp -i deploy_key.pem -r api/* user@your-server:/var/www/wttw/api
           ssh -i deploy_key.pem user@your-server "sudo systemctl restart your-api-service"
