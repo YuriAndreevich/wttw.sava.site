@@ -18,6 +18,8 @@
     "@reduxjs/toolkit": "^2.4.0",
     "autoprefixer": "^10.4.20",
     "axios": "^1.7.9",
+    "babel-eslint": "^10.1.0",
+    "eslint-define-config": "^2.1.0",
     "eslint-plugin-import": "^2.31.0",
     "freeice": "^2.2.2",
     "jwt-decode": "^4.0.0",

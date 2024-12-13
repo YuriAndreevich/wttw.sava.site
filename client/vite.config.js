@@ -12,7 +12,7 @@ export default defineConfig({
       'pages': path.resolve('src/pages'),
       'assets': path.resolve('src/assets'),
       'UI': path.resolve('src/components/UI'),
-    },
+            },
   },
 });
 
