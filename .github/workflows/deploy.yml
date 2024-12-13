@@ -13,17 +13,13 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      - name: Set up SSH key
-        env:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+      - name: Install NVM and Node.js (v20.x)
         run: |
-          echo "$SSH_PRIVATE_KEY" > deploy_key.pem
-          chmod 600 deploy_key.pem
-
-      - name: Set up Node.js (v20.x)
-        uses: actions/setup-node@v3
-        with:
-          node-version: '20'
+          curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+          source ~/.bashrc
+          nvm install 20
+          nvm use 20
+          node -v # Проверяем версию Node.js
 
       - name: Install Dependencies (Client)
         if: contains(github.event.head_commit.message, 'client')
@@ -35,7 +31,7 @@ jobs:
       - name: Deploy Client to Server
         if: contains(github.event.head_commit.message, 'client')
         run: |
-          scp -i deploy_key.pem -r client/dist/* user@your-server:/var/www/wttw/dist
+          scp -i deploy_key.pem -r client/dist/* user@your-server:/var/www/wttw
           ssh -i deploy_key.pem user@your-server "sudo systemctl restart nginx"
 
       - name: Install Dependencies (API)
@@ -48,5 +44,5 @@ jobs:
       - name: Deploy API to Server
         if: contains(github.event.head_commit.message, 'api')
         run: |
-          scp -i deploy_key.pem -r api/* user@your-server:/var/www/wttw/api
+          scp -i deploy_key.pem -r api/* user@your-server:/path/to/api
           ssh -i deploy_key.pem user@your-server "sudo systemctl restart your-api-service"
