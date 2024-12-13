@@ -29,7 +29,7 @@ import { LoginPage } from "pages/LoginPage";
 import { RegisterPage } from "pages/RegisterPage";
 import PostPage from "pages/News/components/PostPage";
 
-import Crm from "pages/Crm";
+import Crm from "pages/CRM";
 import {CreatePostPage} from 'pages/Crm/CreatePost'
 import SendUs from 'pages/Crm/sendUs'
 import SendUsForm from 'components/SendUs'
