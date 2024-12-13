@@ -16,8 +16,8 @@ jobs:
       - name: Install Dependencies
         run: |
           cd client
-          npm install
-          npm run build
+          yarn install
+          yarn build
 
       - name: Deploy to Server
         env:
