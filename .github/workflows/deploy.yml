@@ -19,39 +19,42 @@ jobs:
         with:
           node-version: '20'
 
-      # Проверка и деплой client
+      # Проверка и деплой клиента
       - name: Check if Client was updated
         id: client
         run: |
-          git diff --exit-code --quiet HEAD~1..HEAD -- client || echo "Client updated"
+          git diff --exit-code --quiet HEAD~1..HEAD -- client
+        continue-on-error: true  # Не прерываем выполнение, если изменений нет
 
       - name: Install Dependencies and Build Client
-        if: steps.client.outputs.stdout == 'Client updated'
+        if: steps.client.outcome == 'success'  # Если были изменения в client
         run: |
           cd client
           yarn install
           yarn build
 
       - name: Deploy Client to Server
-        if: steps.client.outputs.stdout == 'Client updated'
+        if: steps.client.outcome == 'success'
         run: |
           scp -i deploy_key.pem -r client/dist/* user@your-server:/var/www/wttw/dist
           ssh -i deploy_key.pem user@your-server "sudo systemctl restart nginx"
 
+      # Проверка и деплой API
       - name: Check if API was updated
         id: api
         run: |
-          git diff --exit-code --quiet HEAD~1..HEAD -- api || echo "API updated"
+          git diff --exit-code --quiet HEAD~1..HEAD -- api
+        continue-on-error: true  # Не прерываем выполнение, если изменений нет
 
       - name: Install Dependencies and Build API
-        if: steps.api.outputs.stdout == 'API updated'
+        if: steps.api.outcome == 'success'  # Если были изменения в api
         run: |
           cd api
           yarn install
           yarn build
 
       - name: Deploy API to Server
-        if: steps.api.outputs.stdout == 'API updated'
+        if: steps.api.outcome == 'success'
         run: |
           scp -i deploy_key.pem -r api/* user@your-server:/var/www/wttw/api
           ssh -i deploy_key.pem user@your-server "sudo systemctl restart your-api-service"
