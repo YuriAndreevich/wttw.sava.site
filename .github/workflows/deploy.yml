@@ -15,6 +15,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
+          cd client
           npm install
           npm run build
 
@@ -24,5 +25,5 @@ jobs:
         run: |
           echo "$SSH_PRIVATE_KEY" > deploy_key.pem
           chmod 600 deploy_key.pem
-          scp -i deploy_key.pem -r dist/* user@your-server:/var/www/wttw
+          scp -i deploy_key.pem -r client/dist/* user@your-server:/var/www/wttw
           ssh -i deploy_key.pem user@your-server "sudo systemctl restart nginx"
