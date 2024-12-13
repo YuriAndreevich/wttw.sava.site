@@ -2,13 +2,13 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { createPost } from "../../../redux/features/post/postSlice";
-import styles from './CreatePost.module.scss'; // Подключаем модульные стили
+import styles from './CreatePost.module.scss'; 
 
 export const CreatePostPage = () => {
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
   const [image, setImage] = useState("");
-  const [post, setPost] = useState(null); // Для хранения данных о добавленном посте
+  const [post, setPost] = useState(null); 
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -20,15 +20,14 @@ export const CreatePostPage = () => {
       data.append("text", text);
       data.append("image", image);
       
-      // После добавления поста, сохраняем его данные в локальное состояние
-      dispatch(createPost(data)).then((response) => {
+      dispatch(createPost(data)).then(() => {
         const newPost = {
           title,
           text,
           image,
         };
-        setPost(newPost); // Сохраняем данные нового поста
-        navigate("/"); // Переход на главную страницу
+        setPost(newPost); 
+        navigate("/"); 
       });
     } catch (error) {
       console.log(error);
@@ -99,7 +98,6 @@ export const CreatePostPage = () => {
         </div>
       </form>
 
-      {/* Таблица с данными о посте, если пост был добавлен */}
       {post && (
         <div className={styles.tableWrapper}>
           <table className={styles.postTable}>

@@ -1,4 +1,3 @@
-// src/components/VisitorQuestions.js
 import styles from './VisitorQuestions.module.scss'; 
 import { getAllSendUs, removeSendUs } from "../../../redux/features/sendUs/sendUsSlice";
 import { useDispatch, useSelector } from "react-redux";
@@ -31,7 +30,7 @@ const SendUs = () => {
                 <th>Email</th>
                 <th>Сообщение</th>
                 <th>Заголовок</th>
-                <th>Действия</th> {/* Добавляем колонку для действий */}
+                <th>Действия</th> 
               </tr>
             </thead>
             <tbody>
