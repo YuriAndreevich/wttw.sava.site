@@ -22,18 +22,18 @@ function contacts() {
       ></iframe>
       <div className="contacts-items">
         <div className="contacts-item">
-          <LocalPhoneIcon color="navBg" />
+          <LocalPhoneIcon color="main" />
           <p className="contacts-item-title">+375 (214) 52-28-40</p>
           <p className="contacts-item-title">+375 (214) 50-57-42</p>
         </div>
         <div className="contacts-item">
-          <MailIcon color="navBg" />
+          <MailIcon color="main" />
           <p className="contacts-item-title">novopolotsk-ntcson@ntcson.by</p>
           <p className="contacts-item-title">info@ngpk.by</p>
         </div>
 
         <div className="contacts-item">
-          <AddLocationAltIcon color="navBg" />
+          <AddLocationAltIcon color="main" />
           <p className="contacts-item-title">
             211440 г. Новополоцк, ул. Парковая, 20 / 137
           </p>

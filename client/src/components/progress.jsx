@@ -26,7 +26,7 @@ export default function LinearDeterminate() {
   return (
     <Box sx={{ width: "100%" }}>
       <LinearProgress
-        color="navBg"
+        color="main"
         variant="determinate"
         value={scrollProgress}
       />

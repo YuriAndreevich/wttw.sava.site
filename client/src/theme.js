@@ -9,11 +9,11 @@ const theme = createTheme({
     white: {
       main: "#fff",
     },
-    navBg: {
-      main: "#339966",
+    main: {
+      main: "rgb(89, 139, 146)",
     },
-    secondary: {
-      main: "#19857b",
+    mainHover: {
+      main: "rgb(66, 114, 121)",
     },
     error: {
       main: red.A400,

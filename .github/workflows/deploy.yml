@@ -13,28 +13,26 @@ jobs:
       - name: Checkout Code
         uses: actions/checkout@v3
 
-      # Устанавливаем Node.js с помощью actions/setup-node
       - name: Set up Node.js (v20.x)
         uses: actions/setup-node@v3
         with:
           node-version: '20'
 
-      # Проверка и деплой клиента
       - name: Check if Client was updated
         id: client
         run: |
           git fetch origin
           git diff --exit-code --quiet origin/main -- client
-        continue-on-error: true  # Не прерываем выполнение, если изменений нет
+        continue-on-error: true
 
       - name: Clear Yarn cache for Client
         if: steps.client.outcome == 'success'
         run: |
           cd client
-          yarn cache clean  # Очистка кэша перед установкой зависимостей
+          yarn cache clean 
 
       - name: Install Dependencies and Build Client
-        if: steps.client.outcome == 'success'  # Если были изменения в client
+        if: steps.client.outcome == 'success'  
         run: |
           cd client
           yarn install
@@ -46,22 +44,21 @@ jobs:
           scp -i deploy_key.pem -r client/dist/* user@your-server:/var/www/wttw/dist
           ssh -i deploy_key.pem user@your-server "sudo systemctl restart nginx"
 
-      # Проверка и деплой API
       - name: Check if API was updated
         id: api
         run: |
           git fetch origin
           git diff --exit-code --quiet origin/main -- api
-        continue-on-error: true  # Не прерываем выполнение, если изменений нет
+        continue-on-error: true  
 
       - name: Clear Yarn cache for API
         if: steps.api.outcome == 'success'
         run: |
           cd api
-          yarn cache clean  # Очистка кэша перед установкой зависимостей
+          yarn cache clean  
 
       - name: Install Dependencies and Build API
-        if: steps.api.outcome == 'success'  # Если были изменения в api
+        if: steps.api.outcome == 'success'  
         run: |
           cd api
           yarn install
