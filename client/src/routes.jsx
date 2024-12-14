@@ -29,13 +29,15 @@ import { LoginPage } from "pages/LoginPage";
 import { RegisterPage } from "pages/RegisterPage";
 import PostPage from "pages/News/components/PostPage";
 
-import Crm from "pages/CRM";
-import {CreatePostPage} from 'pages/Crm/CreatePost'
-import SendUs from 'pages/Crm/sendUs'
 import SendUsForm from 'components/SendUs'
 
 
 import PrivateRoute from "components/PrivateRoute";
+import Crm from "pages/CRM";
+import SendUs from 'pages/CRM/sendUs'
+import { EditPostPage } from "pages/CRM/News/EditPostPage";
+import {CreatePostPage} from 'pages/CRM/News/CreatePostPage'
+
 // import VideoChat from "pages/VideoChat"
 const routes = [
   { path: "/", element: <Home /> },
@@ -92,6 +94,14 @@ const routes = [
     element: (
       <PrivateRoute>
            <CreatePostPage />
+      </PrivateRoute>
+    ),
+  },
+  {
+    path: "/crm/EditPostPage",
+    element: (
+      <PrivateRoute>
+           <EditPostPage />
       </PrivateRoute>
     ),
   },

@@ -20,13 +20,13 @@ const News = () => {
     return <div className={styles.noPosts}>Новостей не найдены.</div>;
   }
   const array = isMain ? posts.slice(0, 3) : posts;
-
+  const popularNews =  popularPosts.slice(0, 3)
   return (
     <div className={styles.contentWrapper}>
       {!isMain && (
         <div className={styles.popularSection}>
           <div className={styles.popularTitle}>Популярные новости:</div>
-          {popularPosts?.map((post, idx) => (
+          {popularNews?.map((post, idx) => (
             <PopularPosts key={idx} post={post} />
           ))}
         </div>

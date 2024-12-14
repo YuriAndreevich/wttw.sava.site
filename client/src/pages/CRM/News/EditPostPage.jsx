@@ -1,8 +1,8 @@
 import { useEffect, useState, useCallback } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
-import { updatePost } from "../../redux/features/post/postSlice";
-import axios from "../../axios";
+import { updatePost } from "../../../redux/features/post/postSlice";
+import axios from "../../../axios";
 
 export const EditPostPage = () => {
   const [title, setTitle] = useState("");
