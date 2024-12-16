@@ -4,8 +4,8 @@ meta {
   seq: 10
 }
 
-get {
-  url: http://localhost:3002/api/sendUs
+delete {
+  url: http://localhost:3002/api/sendUs/6759a95c053b90fd8aacc903
   body: json
   auth: bearer
 }
@@ -16,7 +16,6 @@ auth:bearer {
 
 body:json {
   {
-  "title":"tile",
-  "text":"text"
+  "id": "6759a95c053b90fd8aacc903"
   }
 }
