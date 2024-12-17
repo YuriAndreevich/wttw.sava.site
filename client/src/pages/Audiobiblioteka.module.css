@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding:20px;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    gap:20px;
+  }
+  
+  .leftPanel {
+    text-align: left;
+    width: 50%;
+  }
+  
+  .rightPanel {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .contentTabs {
+    cursor: pointer;
+    width:100%;
+    font-size: 1.2rem;
+    margin: 0;
+    width:100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+  }
+  
+  .video {
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    width: 100%;
+    height: 480px;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+  }
+  

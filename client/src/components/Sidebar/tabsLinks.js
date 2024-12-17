@@ -83,11 +83,6 @@ export const tabsLinks = [
         route: "https://beltiz.by/dostupnaya-sreda",
       },
       {
-        label:
-          "Условия обеспечения граждан техническими средствами социальной реабилитации и сроки их эксплуатации",
-        route: "usloviya-obesp-grazd",
-      },
-      {
         label: "Аудиобиблиотека для незрячих и слабовидящих",
         route: "audiobiblioteka-dlya-nezryachikh",
       },
