@@ -35,7 +35,9 @@ app.use('/api/posts', postRoute);
 app.use('/api/comments', commentRoute);
 app.use('/api/sendUs', sendUsRoute);
 
-
+app.get('/api/test', (req, res) => {
+    res.json({ message: 'Test route is working!' });
+});
 // initializeChat(server);
 
 async function start() {
